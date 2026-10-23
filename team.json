@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "project": "SIH26263",
+  "phase": "research-planning",
+  "team_lead": "kanishkar",
+  "assigned_on": "2026-10-23",
+  "members": [
+    {
+      "id": "gopika",
+      "name": "Gopika",
+      "role_number": 1,
+      "role": "Institutional workflows, user needs and existing solutions",
+      "directory": "research/gopika",
+      "review_partner": "Pranav",
+      "github_username": null
+    },
+    {
+      "id": "sudhan",
+      "name": "Sudhan",
+      "role_number": 2,
+      "role": "APAAR, ABC, DigiLocker/NAD and integration feasibility",
+      "directory": "research/sudhan",
+      "review_partner": "Sudhir",
+      "github_username": null
+    },
+    {
+      "id": "pranav",
+      "name": "Pranav",
+      "role_number": 3,
+      "role": "AICTE admission rules and compliance logic",
+      "directory": "research/pranav",
+      "review_partner": "Gopika",
+      "github_username": null
+    },
+    {
+      "id": "dharanish",
+      "name": "Dharanish R P",
+      "role_number": 4,
+      "role": "Data architecture, validation and anomaly detection",
+      "directory": "research/dharanish",
+      "review_partner": "Kanishkar B",
+      "github_username": null
+    },
+    {
+      "id": "sudhir",
+      "name": "Sudhir",
+      "role_number": 5,
+      "role": "Privacy, security, consent and credential verification",
+      "directory": "research/sudhir",
+      "review_partner": "Sudhan",
+      "github_username": null
+    },
+    {
+      "id": "kanishkar",
+      "name": "Kanishkar B",
+      "role_number": 6,
+      "role": "Team lead: synthesis, feasibility, MVP and evaluation",
+      "directory": "research/kanishkar",
+      "review_partner": "All five research owners",
+      "github_username": null
+    }
+  ]
+}

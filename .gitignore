@@ -1,0 +1,22 @@
+# Credentials and private local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+private/
+data/private/
+data/raw/
+# Regenerable local environments and output
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+node_modules/
+.ipynb_checkpoints/
+# OS files
+.DS_Store
+Thumbs.db
+# Review git diff before every commit: ignores are not a security boundary.

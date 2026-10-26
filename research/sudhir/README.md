@@ -5,7 +5,7 @@
 
 **Owner:** Sudhir  
 **Review partner:** Sudhan  
-**Starting status:** Not started  
+**Starting status:** In progress (50% milestone: foundational research, permission matrix, data inventory, threat models, and verification architecture drafted)  
 **Mission:** Define trustworthy access and credential verification with appropriate data protection.
 
 ## Questions to answer
@@ -24,11 +24,11 @@
 5. Review proposed integration permissions with Sudhan and schema/storage decisions with Dharanish.
 
 ## Required outputs
-- [ ] Role/action/resource permission matrix.
-- [ ] Data inventory: field, purpose, source, visibility, proposed retention and rationale.
-- [ ] Consent and third-party verification workflow.
-- [ ] Threat model with at least eight abuse cases, mitigations and residual risks.
-- [ ] Credential verification design and list of unresolved legal/access questions.
+- [x] Role/action/resource permission matrix (Drafted in [findings.md](findings.md#51-role-action-and-resource-permission-matrix-rbac--abac)).
+- [x] Data inventory: field, purpose, source, visibility, proposed retention and rationale (Drafted in [findings.md](findings.md#52-student-data-inventory--minimisation-policy)).
+- [x] Consent and third-party verification workflow (Drafted in [findings.md](findings.md#4-worked-cases-or-experiment)).
+- [x] Threat model with at least eight abuse cases, mitigations and residual risks (Drafted in [findings.md](findings.md#53-threat-model-8-realistic-abuse-cases-mitigations--residual-risks)).
+- [x] Credential verification design and list of unresolved legal/access questions (Drafted in [findings.md](findings.md#54-credential-verification--certificate-display-lifecycle-r06-r10) and [findings.md#7-unknowns-and-blockers](findings.md#7-unknowns-and-blockers)).
 
 Write the main brief in [findings.md](findings.md); use additional files only when they improve clarity. Use the [shared templates](../../templates/README.md).
 

@@ -1,20 +1,17 @@
 # Progress — Pranav
 
-**Current status:** Not started  
-**Next action:** Read the assignment and select the first research question.  
-**Blockers:** Not assessed.  
-**Handoff:** None yet.
+**Status:** Initial research draft prepared; further primary-source verification required.  
+**Last updated:** 2026-10-26  
+**Review partner:** Gopika  
+**Handoff recipient:** Dharanish  
+**Policy escalation:** Kanishkar
 
-## Update log
-Append entries; retain previous updates.
+## Work log
 
-### YYYY-MM-DD — update template
-- Question investigated:
-- Work actually completed:
-- Evidence added (source IDs):
-- Key finding or remaining uncertainty:
-- Files changed:
-- Review/handoff needed:
-- Next action:
-
-Delete this example entry when adding your first real update. Status values: Not started / In progress / Blocked / Ready for review / Reviewed.
+### 2026-10-26 — Initial research brief and rule framework
+- Drafted answers to all six assignment questions.
+- Prepared a preliminary rule catalogue (`PRA-R01` through `PRA-R16`) covering approval resolution, seat classification, category/status consistency, category-specific rules, enrolment lifecycle and escalation.
+- Added 15 fictional worked scenarios (`PRA-S01` through `PRA-S15`).
+- Drafted an approval-data authority/correction proposal, unresolved questions, handoff notes and a seven-minute teach-back outline.
+- Added source-register entries `PRA-001` through `PRA-004` for official policy starting points and the project source guide.
+- Clearly marked exact category clauses, current amendments, institution-specific approval records and API availability as unresolved where they have not been verified.

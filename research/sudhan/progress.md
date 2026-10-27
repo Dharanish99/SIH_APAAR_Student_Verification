@@ -1,11 +1,21 @@
 # Progress — Sudhan
 
-**Current status:** In progress  
-**Next action:** Investigate Question 3 & 4 (Integration matrix: Documented interfaces, API Setu endpoints, and partner onboarding requirements).  
-**Blockers:** Need official API Setu sandbox access/credentials from organizers/AICTE (flagged to Kanishkar).  
-**Handoff:** Shared 4-tier verification status enum with Dharanish (Role 4) and consent redirection model with Sudhir (Role 5).
+**Current status:** Desk research complete for all six questions; live integration and human review pending.<br>
+**Next action:** Lead synthesises the current integration review with policy, security and institution workflows; the human sponsor later confirms provider permission and authoritative AICTE contracts.<br>
+**External dependencies:** Eligible sponsor, approved use case/client/scopes/testing arrangements, foreign/missing-ID submission rules, and official SIH wording. No public sandbox or temporary testing access is promised.<br>
+**Handoff:** [Current integration review](integration-review.md) supersedes the historical checksum/registry/linear-status design; use independent evidence dimensions, account-to-case binding, and institution-owned correction workflows.
 
 ## Update log
+
+### 2026-10-26 research round — completed 2026-10-27 (Asia/Kolkata)
+- **Authors:** integration_research AI agent; completion audit by integration_finish AI agent. Human owner remains Sudhan; no human approval is recorded.
+- **Work completed:** Addressed all six assignment questions in [integration-review.md](integration-review.md): ecosystem, proof boundaries, operation matrix, partner access, failure states, missing/foreign-ID and correction routes. Added [12 fictional contract scenarios](contract-scenarios.csv), explicitly designed and unexecuted.
+- **Evidence:** SUD-101–109 record inspected official pages, September 2026 Meri Pehchaan requester v2.4, onboarding SOP, historical manual/support conflicts, and unavailable official SIH listing. Completion audit reopened the APAAR FAQ/resource index and rechecked cached specification/SOP sections; it did not repeat the entire source investigation.
+- **Key correction:** The documented APAAR GET operation accepts no ID parameter and returns the token-linked account's evidence. Its 404 cases do not establish registry-wide nonexistence; it recommends one call after token acquisition. Academic credit details do not establish exhaustive current admissions or sanction an intake.
+- **Original preservation:** Historical findings and source records remain under [original-2026-10-25](original-2026-10-25/findings.md); their Git blob hashes match baseline `5ee5d57`. The historical update log below remains unchanged and is superseded where the correction ledger says so.
+- **Critique/handoff:** Shared the no-arbitrary/batch-validation boundary and institution-assertion-first recommendation with the lead, security and policy AI agents. Preserve separate provider linkage, enrolment, credential and policy evidence; missing linkage must not automatically become fraud or ineligibility.
+- **Checks:** Validated local Markdown targets and source-ID resolution in current integration documents; parsed current source/scenario CSVs; verified cached PDF SHA-256 values and original Git blobs. All 12 scenarios remain unexecuted. See the completion audit record in the integration review.
+- **Remaining limits:** No provider credentials/calls, interviews, real student records, measured performance, field pilot or human review. Official SIH wording remains unverified after another HTTP 403 on 2026-10-27. No external contact, account creation or product implementation occurred.
 
 ### 2026-10-25 — Question 2 Investigation: Format, Existence, Person Association & Enrolment
 - **Question investigated:** Question 2: What separately proves an ID's format, existence and association with a person?

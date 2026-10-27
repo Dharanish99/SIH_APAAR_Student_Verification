@@ -1,8 +1,10 @@
 # Research findings — Sudhan
 
-**Workstream:** APAAR, ABC, DigiLocker/NAD and integration feasibility  
-**Status:** In progress  
-**Last substantive update:** 2026-10-25  
+> **Audit notice — 2026-10-26:** This is Sudhan's preserved historical draft. Several claims below are corrected or withdrawn, including APAAR checksum validation, arbitrary registry lookup, automatic dual-enrolment invalidity and full legal compliance. Read the [current integration evidence review](integration-review.md) for the complete six-question research, current September 2026 provider specification, correction ledger and access limits. The original file is also archived under [original-2026-10-25](original-2026-10-25/findings.md). New work is AI-authored, not human-reviewed.
+
+**Workstream:** APAAR, ABC, DigiLocker/NAD and integration feasibility
+**Status:** In progress
+**Last substantive update:** 2026-10-25
 **Reviewer / review date:** Not reviewed (Sudhir assigned as review partner)
 
 ---
@@ -12,7 +14,7 @@ This workstream answers the core architectural and feasibility questions for SIH
 * **Question 1:** *How do APAAR identity, ABC credits, DigiLocker and NAD relate, and what does each service establish?*
 * **Question 2:** *What separately proves an ID's format, existence and association with a person?*
 
-**Scope & Context:** 
+**Scope & Context:**
 This research defines the boundary between client-side string validation, authoritative registry lookup, biometric/demographic person binding, and institutional admission approval. It directly resolves the core defense question: *"What exactly does our verified badge prove?"*
 
 ---
@@ -56,7 +58,7 @@ The Indian digital education infrastructure operates across the Ministry of Educ
 ```
 
 ### B. Deconstructing Identity: Format vs. Existence vs. Person Binding vs. Enrolment
-One of the most dangerous design errors in student verification is treating a successful format check as proof of identity, or treating proof of identity as proof of valid admission. 
+One of the most dangerous design errors in student verification is treating a successful format check as proof of identity, or treating proof of identity as proof of valid admission.
 
 They are four completely separate tiers:
 

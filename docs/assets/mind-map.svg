@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="3350" viewBox="0 0 2200 3350">
+<title>SetuTrace complete solution mind map</title>
+<desc>Proposed student reporting and correction layer. Twelve branches cover users, workflow, policy, integration, privacy, architecture, stack, scope, evidence and validation.</desc>
+<rect width="2200" height="3350" fill="#f5f8fb"/>
+<text x="50" y="46" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#596b7c">RESEARCH TO SOLUTION / 27 OCTOBER 2026</text>
+<rect x="650" y="83" width="900" height="147" rx="18" fill="#173650"/>
+<text x="973" y="143" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="43" font-weight="700" fill="#ffffff">SetuTrace</text>
+<text x="728" y="189" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="27" font-weight="400" fill="#ffffff">A correctable evidence trail for student reporting</text>
+<text x="568" y="270" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="23" font-weight="400" fill="#596b7c">PROPOSAL: supported constraints; benefits and real deployment remain untested</text>
+<polyline points="1100,230 1100,241" fill="none" stroke="#abc2d0" stroke-width="5"/>
+<polyline points="1100,293 1100,3150" fill="none" stroke="#abc2d0" stroke-width="5"/>
+<polyline points="1100,368 990,368" fill="none" stroke="#087e83" stroke-width="4"/>
+<rect x="40" y="320" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="40" y="320" width="950" height="72" rx="15" fill="#087e83"/>
+<text x="65" y="365" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">01  People and jobs</text>
+<text x="65" y="433" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="433" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Student: inspect own claims, challenge errors, follow an appeal</text>
+<text x="65" y="470" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="470" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Operator: reuse ERP exports and resolve actionable exceptions</text>
+<text x="65" y="507" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="507" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Approver: review differences and freeze a reporting snapshot</text>
+<text x="65" y="544" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="544" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Regulator: scoped totals and internal authorised case review</text>
+<text x="65" y="581" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="581" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Verifier: narrow current assertion with a recipient-bound grant</text>
+<text x="65" y="618" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="618" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Assisted access: no dependency on the disputed APAAR to seek help</text>
+<polyline points="1100,368 1210,368" fill="none" stroke="#087e83" stroke-width="4"/>
+<rect x="1210" y="320" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="1210" y="320" width="950" height="72" rx="15" fill="#087e83"/>
+<text x="1235" y="365" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">02  Useful product hypothesis</text>
+<text x="1235" y="433" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="433" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">SetuTrace sits beside ERP and NAD; local operations remain there</text>
+<text x="1235" y="470" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="470" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Evidence card: institution claim, provider evidence, rule and resolution</text>
+<text x="1235" y="507" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="507" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Trace source revision through findings, snapshots and corrections</text>
+<text x="1235" y="544" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="544" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Explain changed totals and identify the responsible source owner</text>
+<text x="1235" y="581" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="581" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Compare with ERP replacement, API-first registry and a checklist</text>
+<text x="1235" y="618" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="618" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Choose the simpler checklist if the product adds no net value</text>
+<polyline points="1100,838 990,838" fill="none" stroke="#405a99" stroke-width="4"/>
+<rect x="40" y="790" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="40" y="790" width="950" height="72" rx="15" fill="#405a99"/>
+<text x="65" y="835" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">03  Reporting and correction loop</text>
+<text x="65" y="903" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="903" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">ERP export -&gt; staged CSV -&gt; versioned mapping -&gt; change preview</text>
+<text x="65" y="940" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="940" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Commit bounded chunks with revisions, audit events and outbox</text>
+<text x="65" y="977" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="977" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Explain findings; approver freezes explicit accepted row versions</text>
+<text x="65" y="1014" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="1014" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Local acceptance, export readiness and official receipt are distinct</text>
+<text x="65" y="1051" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="1051" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Challenge -&gt; evidence -&gt; source correction or refusal -&gt; appeal</text>
+<text x="65" y="1088" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="1088" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Re-evaluate affected findings and supersede old assertions</text>
+<text x="65" y="1125" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="1125" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Record legal effective time separately from acknowledgement time</text>
+<polyline points="1100,838 1210,838" fill="none" stroke="#405a99" stroke-width="4"/>
+<rect x="1210" y="790" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="1210" y="790" width="950" height="72" rx="15" fill="#405a99"/>
+<text x="1235" y="835" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">04  Policy and inclusion</text>
+<text x="1235" y="903" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="903" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Scope rules by institution, campus, programme, year and entry route</text>
+<text x="1235" y="940" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="940" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Approval versions and effective dates determine counting scope</text>
+<text x="1235" y="977" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="977" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Missing current rule pack returns UNKNOWN; no universal quotas</text>
+<text x="1235" y="1014" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="1014" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Nationality, candidature and seat entitlement remain distinct</text>
+<text x="1235" y="1051" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="1051" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Concurrent programmes can be legitimate; review timing and rules</text>
+<text x="1235" y="1088" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="1088" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Missing or foreign APAAR keeps capture open and linkage pending</text>
+<text x="1235" y="1125" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="1125" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">14 proposed rules and 22 fictional cases; no automatic sanction</text>
+<polyline points="1100,1308 990,1308" fill="none" stroke="#9a6331" stroke-width="4"/>
+<rect x="40" y="1260" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="40" y="1260" width="950" height="72" rx="15" fill="#9a6331"/>
+<text x="65" y="1305" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">05  Provider and system boundaries</text>
+<text x="65" y="1373" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="1373" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Documented APAAR route is token-account linked, not bulk ID lookup</text>
+<text x="65" y="1410" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="1410" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Sponsor, use case, scopes and live access remain external gates</text>
+<text x="65" y="1447" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="1447" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">No public sandbox promise or unapproved recurring polling</text>
+<text x="65" y="1484" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="1484" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Not-linked, denied, mismatch, outage and stale evidence differ</text>
+<text x="65" y="1521" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="1521" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Minimise retained response; credit data is not all enrolments</text>
+<text x="65" y="1558" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="1558" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">CSV first; ERP, AICTE and award adapters require real contracts</text>
+<text x="65" y="1595" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="1595" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Mock provider and issuer labels remain explicit in demonstrations</text>
+<polyline points="1100,1308 1210,1308" fill="none" stroke="#9a6331" stroke-width="4"/>
+<rect x="1210" y="1260" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="1210" y="1260" width="950" height="72" rx="15" fill="#9a6331"/>
+<text x="1235" y="1305" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">06  Privacy and trust</text>
+<text x="1235" y="1373" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="1373" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Separate reporting authority, provider permission and disclosure grant</text>
+<text x="1235" y="1410" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="1410" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Tenant/resource checks on API, jobs, storage, downloads and exports</text>
+<text x="1235" y="1447" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="1447" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Uniform institution receipts; matches internal to authorised regulator</text>
+<text x="1235" y="1484" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="1484" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">No raw-ID public search, match bit or authority from a QR alone</text>
+<text x="1235" y="1521" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="1521" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Bind verifier to recipient, purpose, fields, revision and expiry</text>
+<text x="1235" y="1558" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="1558" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Recheck grants and current status; revoke future access</text>
+<text x="1235" y="1595" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="1595" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">DPDP stages, SPDI applicability, retention and guardian review gated</text>
+<polyline points="1100,1778 990,1778" fill="none" stroke="#087e83" stroke-width="4"/>
+<rect x="40" y="1730" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="40" y="1730" width="950" height="72" rx="15" fill="#087e83"/>
+<text x="65" y="1775" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">07  Architecture and data</text>
+<text x="65" y="1843" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="1843" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Institution-local key and internal UUID; no automatic person merge</text>
+<text x="65" y="1880" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="1880" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Identity claim, enrolment, approval and credential are separate</text>
+<text x="65" y="1917" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="1917" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Immutable revisions, source evidence and effective/recorded times</text>
+<text x="65" y="1954" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="1954" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Idempotency token plus content and mapping fingerprint</text>
+<text x="65" y="1991" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="1991" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Expected-version correction prevents silent stale overwrites</text>
+<text x="65" y="2028" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="2028" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">PostgreSQL constraints plus atomic audit/outbox; leased worker</text>
+<text x="65" y="2065" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="92" y="2065" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Provider calls outside transactions; visible partial/stale states</text>
+<polyline points="1100,1778 1210,1778" fill="none" stroke="#087e83" stroke-width="4"/>
+<rect x="1210" y="1730" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="1210" y="1730" width="950" height="72" rx="15" fill="#087e83"/>
+<text x="1235" y="1775" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">08  Core implementation stack</text>
+<text x="1235" y="1843" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="1843" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">React + TypeScript + Vite; accessible responsive web interface</text>
+<text x="1235" y="1880" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="1880" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Python + FastAPI + Pydantic + generated OpenAPI contracts</text>
+<text x="1235" y="1917" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="1917" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">PostgreSQL 18 + SQLAlchemy + Alembic; separate Python worker</text>
+<text x="1235" y="1954" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="1954" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">CSV first; controlled JSON/CSV/PDF; read-only XLSX later</text>
+<text x="1235" y="1991" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="1991" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Institution OIDC; Keycloak synthetic option; secure server session</text>
+<text x="1235" y="2028" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="2028" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Private S3-compatible storage; managed signing keys and secrets</text>
+<text x="1235" y="2065" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#087e83">â€¢</text>
+<text x="1262" y="2065" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Pin supported dependencies at implementation; no app built yet</text>
+<polyline points="1100,2248 990,2248" fill="none" stroke="#405a99" stroke-width="4"/>
+<rect x="40" y="2200" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="40" y="2200" width="950" height="72" rx="15" fill="#405a99"/>
+<text x="65" y="2245" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">09  Operations and testing stack</text>
+<text x="65" y="2313" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="2313" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Docker Compose development; GitHub Actions and dependency scans</text>
+<text x="65" y="2350" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="2350" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Ubuntu LTS + Caddy; managed DB, private storage and tested backups</text>
+<text x="65" y="2387" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="2387" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">OpenTelemetry, Prometheus/Grafana and redacted structured logs</text>
+<text x="65" y="2424" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="2424" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">pytest + Hypothesis; real PostgreSQL/Testcontainers race tests</text>
+<text x="65" y="2461" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="2461" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Playwright + axe-core; Locust for future measured workloads</text>
+<text x="65" y="2498" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="2498" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Test tenant isolation, replay, revoke/export races and restoration</text>
+<text x="65" y="2535" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="92" y="2535" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">No Redis, Kafka, blockchain, LLM adjudication or Kubernetes needed</text>
+<polyline points="1100,2248 1210,2248" fill="none" stroke="#405a99" stroke-width="4"/>
+<rect x="1210" y="2200" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="1210" y="2200" width="950" height="72" rx="15" fill="#405a99"/>
+<text x="1235" y="2245" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">10  Requirement coverage and MVP</text>
+<text x="1235" y="2313" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="2313" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">R01-R03: scoped imports, required dimensions and reasoned checks</text>
+<text x="1235" y="2350" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="2350" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">R04-R06: dashboards, authorised assertion and issuer/status trust</text>
+<text x="1235" y="2387" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="2387" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">R07-R09: adapter contracts, permissions/audit and defined reports</text>
+<text x="1235" y="2424" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="2424" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">R10: synthetic issuer-controlled APAAR plus local-ID template</text>
+<text x="1235" y="2461" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="2461" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">First build: two fictional tenants and one narrow policy pack</text>
+<text x="1235" y="2498" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="2498" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Live linking, real rules, real certificates and matching are gated</text>
+<text x="1235" y="2535" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#405a99">â€¢</text>
+<text x="1262" y="2535" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">10k records / 20 users is a future target; only 1k model executed</text>
+<polyline points="1100,2718 990,2718" fill="none" stroke="#9a6331" stroke-width="4"/>
+<rect x="40" y="2670" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="40" y="2670" width="950" height="72" rx="15" fill="#9a6331"/>
+<text x="65" y="2715" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">11  Evidence and provenance</text>
+<text x="65" y="2783" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="2783" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">All six human allotments reconciled; originals remain identifiable</text>
+<text x="65" y="2820" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="2820" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">GitHub + ten Notion snapshots + three supplied Gopika files</text>
+<text x="65" y="2857" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="2857" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Specialist research and independent innovator exchanged critiques</text>
+<text x="65" y="2894" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="2894" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">1,000 fictional rows: eight comparisons and 12 model checks match</text>
+<text x="65" y="2931" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="2931" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Statistical increment: 10 useful labelled alerts + 10 false alerts</text>
+<text x="65" y="2968" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="2968" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">No field study, real DB test, government call or human approval</text>
+<text x="65" y="3005" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="92" y="3005" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Official SIH wording and complete current amendments still open</text>
+<polyline points="1100,2718 1210,2718" fill="none" stroke="#9a6331" stroke-width="4"/>
+<rect x="1210" y="2670" width="950" height="440" rx="18" fill="#ffffff" stroke="#cbdbe4" stroke-width="2"/>
+<rect x="1210" y="2670" width="950" height="72" rx="15" fill="#9a6331"/>
+<text x="1235" y="2715" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="28" font-weight="700" fill="#ffffff">12  Pilot gates and measures</text>
+<text x="1235" y="2783" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="2783" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Confirm workflow, authority, current rules and correction ownership</text>
+<text x="1235" y="2820" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="2820" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Compare total staff/student effort against an improved checklist</text>
+<text x="1235" y="2857" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="2857" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Synthetic implementation tests precede any permitted shadow pilot</text>
+<text x="1235" y="2894" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="2894" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Proposed targets: 90% task success; 20% lower median staff time</text>
+<text x="1235" y="2931" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="2931" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">No increase in unresolved student cases; report sample and failures</text>
+<text x="1235" y="2968" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="2968" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">Stop on disclosure, wrong-person link, silent overwrite or lost control</text>
+<text x="1235" y="3005" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="700" fill="#9a6331">â€¢</text>
+<text x="1262" y="3005" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="22" font-weight="400" fill="#233247">USD42 VM+encrypted DB example excludes the rest of the stack</text>
+<rect x="40" y="3180" width="2120" height="112" rx="18" fill="#e5eef3"/>
+<text x="65" y="3222" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#173650">Decision discipline</text>
+<text x="65" y="3261" font-family="Segoe UI,DejaVu Sans,sans-serif" font-size="24" font-weight="400" fill="#233247">Keep institution assertion, provider evidence, policy finding and signature integrity distinct. No automated admission verdict.</text>
+</svg>

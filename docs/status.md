@@ -1,16 +1,14 @@
-# Research status
+# Research status - 27 October 2026
 
-Initial assignment date: 2026-10-23. This dashboard records actual progress, not estimated completion percentages.
+Desk research and synthesis are prepared for human review. Agent checking is not a human sign-off or field validation.
 
-| Owner | Workstream | Status | Next action | Review |
-|---|---|---|---|---|
-| [Gopika](../research/gopika/README.md) | Institutional workflows, user needs and existing solutions | Not started | Read assignment and select first question | Not reviewed |
-| [Sudhan](../research/sudhan/README.md) | APAAR, ABC, DigiLocker/NAD and integration feasibility | Not started | Read assignment and select first question | Not reviewed |
-| [Pranav](../research/pranav/README.md) | AICTE admission rules and compliance logic | Not started | Read assignment and select first question | Not reviewed |
-| [Dharanish R P](../research/dharanish/README.md) | Data architecture, validation and anomaly detection | Not started | Read assignment and select first question | Not reviewed |
-| [Sudhir](../research/sudhir/README.md) | Privacy, security, consent and credential verification | Not started | Read assignment and select first question | Not reviewed |
-| [Kanishkar B](../research/kanishkar/README.md) | Team lead: synthesis, feasibility, MVP and evaluation | Not started | Read assignment and select first question | Not reviewed |
+| Owner | Completed evidence | Next external step |
+|---|---|---|
+| [Gopika](../research/gopika/findings.md) | Revised Notion allotment; preserved uploads; reference workflows, fields, scenarios and opportunities | Observe permitted staff/student tasks and test usefulness |
+| [Sudhan](../research/sudhan/integration-review.md) | Six integration questions; endpoint and onboarding evidence; correction ledger and contract scenarios | Obtain sponsorship/access and exercise the real contract |
+| [Pranav](../research/pranav/findings.md) | Scoped rule reasoning, boundary cases and amendment gaps | Confirm authoritative pilot-year rule pack and EoA |
+| [Dharanish](../research/dharanish/findings.md) | Notion consolidation, data model, import protocol, original experiment reproduction, costs | Implement and test actual DB/worker/security behavior if authorised |
+| [Sudhir](../research/sudhir/findings.md) | Legal commencement, permissions, retention, threats and credential lifecycle | Institutional/legal review; real negative security tests |
+| [Kanishkar](../research/kanishkar/findings.md) | Research reconciliation, alternatives, MVP and evaluation proposal | Human decision, teach-back and permitted pilot |
 
-Allowed states: Not started → In progress → Ready for review → Reviewed. Use Blocked when a dependency prevents progress.
-A reviewed brief can still contain explicit unknowns. Update the member's progress.md and this table together for meaningful changes.
-Kanishkar coordinates shared status; owners may propose their own updates.
+[Assignment audit](research-audit.md) records the actual agents and source provenance. [Validation record](validation.md) separates checks performed from future tests. None of the six workstreams has a recorded human approval in this research round.

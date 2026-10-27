@@ -1,0 +1,123 @@
+// SIH APAAR research harness v1.0. Synthetic only; no services or database.
+function runResearchExperiment() {
+  const seed = 26263;
+  function rng(s) { return () => { s = (Math.imul(1664525,s)+1013904223)>>>0; return s/4294967296; }; }
+  const random=rng(seed), refRandom=rng(seed+1);
+  const median=a=>{ const b=[...a].sort((x,y)=>x-y), n=b.length;return n%2?b[(n-1)/2]:(b[n/2-1]+b[n/2])/2; };
+  const assert=(condition,message)=>{if(!condition)throw Error(message);};
+  const clone=x=>JSON.parse(JSON.stringify(x));
+  const makeRow=i=>({rowId:"ROW-"+i,tenant:"INST-"+(i%5),sourceSystem:"SYNTHETIC",
+    sourceKey:"ENR-"+i,identityRef:"SYN-"+String(i).padStart(6,"0"),
+    course:"COURSE-"+(i%3),start:"2026-07-01",end:"2027-06-30",
+    status:"active",corrections:Math.floor(random()*5)});
+  const clean=Array.from({length:1000},(_,i)=>makeRow(i));
+  const rows=clone(clean), order=Array.from({length:1000},(_,i)=>i);
+  for(let i=999;i>0;i--){const j=Math.floor(random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}
+  const truth=new Map(rows.map(r=>[r.rowId,new Set()]));
+  const label=(i,s)=>truth.get(rows[i].rowId).add(s);
+  order.slice(0,20).forEach(i=>{rows[i].identityRef="";label(i,"MISSING_IDENTITY");});
+  order.slice(20,40).forEach(i=>{rows[i].end="2025-06-30";label(i,"INVALID_INTERVAL");});
+  order.slice(40,60).forEach(i=>{rows[i].course="UNKNOWN";label(i,"UNKNOWN_COURSE");});
+  for(let k=0;k<10;k++){const to=order[60+k],from=order[70+k],rowId=rows[to].rowId;
+    rows[to]={...clone(rows[from]),rowId};label(to,"DUPLICATE_KEY");label(from,"DUPLICATE_KEY");}
+  order.slice(80,90).forEach(i=>{rows[i].corrections=12+Math.floor(random()*7);label(i,"INJECTED_REVIEW_CASE");});
+  order.slice(90,100).forEach(i=>{rows[i].corrections=4;label(i,"INJECTED_REVIEW_CASE");});
+  // Explicit clean counterexamples: legitimate correction/migration bursts.
+  order.slice(100,110).forEach(i=>{rows[i].corrections=12+Math.floor(random()*7);});
+  const reference=Array.from({length:300},()=>Math.floor(refRandom()*5));
+  const centre=median(reference), mad=median(reference.map(x=>Math.abs(x-centre)));
+  const courses=new Set(["COURSE-0","COURSE-1","COURSE-2"]);
+  const key=r=>[r.tenant,r.sourceSystem,r.sourceKey].join("|");
+  const counts=new Map();rows.forEach(r=>counts.set(key(r),(counts.get(key(r))||0)+1));
+  function ruleIssues(r) {
+    const a=[];
+    if(!r.identityRef)a.push("MISSING_IDENTITY");
+    if(r.end<r.start)a.push("INVALID_INTERVAL");
+    if(!courses.has(r.course))a.push("UNKNOWN_COURSE");
+    if(counts.get(key(r))>1)a.push("DUPLICATE_KEY");
+    return a;
+  }
+  const score=r=>mad===0?null:0.6745*Math.abs(r.corrections-centre)/mad;
+  function metrics(predict) {
+    let tp=0,fp=0,fn=0,tn=0;
+    rows.forEach(r=>{const actual=truth.get(r.rowId).size>0,pred=predict(r);
+      if(actual&&pred)tp++;else if(pred)fp++;else if(actual)fn++;else tn++;});
+    const ratio=(a,b)=>b?a/b:null;
+    return {tp,fp,fn,tn,precision:ratio(tp,tp+fp),recall:ratio(tp,tp+fn),
+      falsePositiveRate:ratio(fp,fp+tn),alerts:tp+fp};
+  }
+  const startMs=Date.now();
+  const rules=metrics(r=>ruleIssues(r).length>0);
+  const statistical=metrics(r=>score(r)!==null&&score(r)>3.5);
+  const combined=metrics(r=>ruleIssues(r).length>0||(score(r)!==null&&score(r)>3.5));
+  const evaluationWallMs=Date.now()-startMs;
+  const typeCounts={};truth.forEach(set=>set.forEach(t=>typeCounts[t]=(typeCounts[t]||0)+1));
+  const checks=[];
+  function check(name,fn){fn();checks.push({name,result:"PASS"});}
+  const db=new Map(), history=[], jobs=new Map();
+  const payload=r=>JSON.stringify([r.identityRef,r.course,r.start,r.end,r.status,r.corrections]);
+  function importBatch(tenant,token,batch,crashAfter=Infinity){
+    const jk=tenant+"|"+token,fp=JSON.stringify(batch);
+    if(batch.some(r=>r.tenant!==tenant))throw Error("TENANT_MISMATCH");
+    let job=jobs.get(jk);
+    if(job&&job.fingerprint!==fp)throw Error("KEY_REUSE");
+    if(job?.done)return "REPLAY";
+    if(!job){job={fingerprint:fp,done:false};jobs.set(jk,job);}
+    let n=0;
+    for(const row of batch){
+      const k=key(row),old=db.get(k),p=payload(row);
+      if(!old||old.payload!==p){
+        const version=(old?.version||0)+1;
+        db.set(k,{payload:p,version});history.push({key:k,version});
+      }
+      n++; if(n===crashAfter)throw Error("SIMULATED_CRASH");
+    }
+    job.done=true;return "DONE";
+  }
+  const groups=Array.from({length:5},(_,t)=>clean.filter(r=>r.tenant==="INST-"+t));
+  check("initial insert 1000",()=>{groups.forEach((g,i)=>importBatch("INST-"+i,"initial",g));assert(db.size===1000&&history.length===1000,"insert");});
+  check("same request replay creates no revisions",()=>{groups.forEach((g,i)=>assert(importBatch("INST-"+i,"initial",g)==="REPLAY","replay"));assert(history.length===1000,"history");});
+  check("new request token same content is no-op",()=>{groups.forEach((g,i)=>importBatch("INST-"+i,"repeat",g));assert(db.size===1000&&history.length===1000,"noop");});
+  const corrected=clone(clean.slice(0,10)).map(r=>({...r,status:"withdrawn"}));
+  check("ten corrections yield 1000 entities and 1010 revisions",()=>{for(let i=0;i<5;i++)importBatch("INST-"+i,"correction",corrected.filter(r=>r.tenant==="INST-"+i));assert(db.size===1000&&history.length===1010,"corrections");});
+  check("changed body with old token is rejected",()=>{let caught=false;try{importBatch("INST-0","initial",[{...groups[0][0],status:"withdrawn"}]);}catch(e){caught=e.message==="KEY_REUSE";}assert(caught,"key reuse");});
+  check("tenant mismatch denied before writes",()=>{const n=history.length;let caught=false;try{importBatch("INST-0","wrong-tenant",[clean[1]]);}catch(e){caught=e.message==="TENANT_MISMATCH";}assert(caught&&history.length===n,"tenant");});
+  check("crash after 37 committed rows resumes without repeated revisions",()=>{
+    const extra=Array.from({length:100},(_,i)=>({...makeRow(2000+i),tenant:"INST-0"}));
+    let caught=false;try{importBatch("INST-0","interrupted",extra,37);}catch(e){caught=e.message==="SIMULATED_CRASH";}
+    assert(caught&&db.size===1037&&history.length===1047,"partial");
+    importBatch("INST-0","interrupted",extra);
+    assert(db.size===1100&&history.length===1110,"resume");});
+  check("stale optimistic version denied",()=>{
+    const k=key(clean[0]),expectedVersion=1,current=db.get(k);
+    const tryEdit=(expected)=>{const old=db.get(k);if(old.version!==expected)return "CONFLICT";
+      db.set(k,{...old,version:old.version+1});return "UPDATED";};
+    assert(current.version===2,"current version");
+    assert(tryEdit(expectedVersion)==="CONFLICT"&&db.get(k).version===2,"stale version");});
+  check("two same-version edits: one accepted in sequential model",()=>{
+    const record={version:1},expected=1;
+    const apply=()=>{if(record.version!==expected)return false;
+      record.version++;return true;};
+    assert(apply()===true&&apply()===false,"optimistic edit");});
+  check("provider unavailable does not become identity verified",()=>{
+    const adapter=()=>({state:"unavailable",mode:"simulated"});
+    assert(adapter().state!=="verified"&&adapter().mode==="simulated","outage");});
+  check("tenant-scoped business keys keep equal local IDs separate",()=>{
+    assert(key({...clean[0],tenant:"INST-0"})!==key({...clean[0],tenant:"INST-1"}),"scope");});
+  check("zero-MAD reference abstains",()=>{const a=[2,2,2],m=median(a),d=median(a.map(x=>Math.abs(x-m)));assert(d===0,"mad");});
+  assert(typeCounts.MISSING_IDENTITY===20&&typeCounts.DUPLICATE_KEY===20,"fixture counts");
+  assert(rules.tp===80&&rules.fp===0&&rules.fn===20,"baseline expected");
+  assert(combined.tp===90&&combined.fp===10&&combined.fn===10,"combined expected");
+  const fields=Object.keys(rows[0]);
+  const q=x=>'"'+String(x).replaceAll('"','""')+'"';
+  const csv=[fields.join(","),...rows.map(r=>fields.map(f=>q(r[f])).join(","))].join("\r\n");
+  const truthCsv=["rowId,labels",...rows.map(r=>q(r.rowId)+","+q([...truth.get(r.rowId)].join(";")))].join("\r\n");
+  return {report:{harness:"v1.0",seed,records:rows.length,referenceRecords:reference.length,
+    referenceMedian:centre,referenceMAD:mad,threshold:3.5,typeCounts,rules,statistical,combined,
+    evaluationWallMs,timer:"Date.now; one coarse run, no throughput claim",checks},
+    csv,truthCsv,referenceCsv:"corrections\r\n"+reference.join("\r\n")};
+}
+
+const result = runResearchExperiment();
+console.log(JSON.stringify(result.report, null, 2));
+// result.csv, result.truthCsv and result.referenceCsv contain the generated datasets.

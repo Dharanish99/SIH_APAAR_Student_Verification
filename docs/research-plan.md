@@ -1,5 +1,7 @@
 # Research plan
 
+**Continuation status, 27 October 2026:** The desk-research round and independent synthesis are complete. This original plan is retained for context. Actual completion and external gates are recorded in [status](status.md), [assignment audit](research-audit.md), [report](solution-report.md) and [validation](validation.md). Suggested sprint days below are not observed durations.
+
 ## Objective
 Produce a coherent, feasible solution supported by sources, operational observations and small experiments. See [member assignments](../research/README.md).
 

@@ -1,0 +1,98 @@
+{
+  "harness": "v1.0",
+  "seed": 26263,
+  "records": 1000,
+  "referenceRecords": 300,
+  "referenceMedian": 2,
+  "referenceMAD": 1,
+  "threshold": 3.5,
+  "typeCounts": {
+    "INJECTED_REVIEW_CASE": 20,
+    "DUPLICATE_KEY": 20,
+    "MISSING_IDENTITY": 20,
+    "UNKNOWN_COURSE": 20,
+    "INVALID_INTERVAL": 20
+  },
+  "rules": {
+    "tp": 80,
+    "fp": 0,
+    "fn": 20,
+    "tn": 900,
+    "precision": 1,
+    "recall": 0.8,
+    "falsePositiveRate": 0,
+    "alerts": 80
+  },
+  "statistical": {
+    "tp": 10,
+    "fp": 10,
+    "fn": 90,
+    "tn": 890,
+    "precision": 0.5,
+    "recall": 0.1,
+    "falsePositiveRate": 0.011111111111111112,
+    "alerts": 20
+  },
+  "combined": {
+    "tp": 90,
+    "fp": 10,
+    "fn": 10,
+    "tn": 890,
+    "precision": 0.9,
+    "recall": 0.9,
+    "falsePositiveRate": 0.011111111111111112,
+    "alerts": 100
+  },
+  "evaluationWallMs": 4,
+  "timer": "Date.now; one coarse run, no throughput claim",
+  "checks": [
+    {
+      "name": "initial insert 1000",
+      "result": "PASS"
+    },
+    {
+      "name": "same request replay creates no revisions",
+      "result": "PASS"
+    },
+    {
+      "name": "new request token same content is no-op",
+      "result": "PASS"
+    },
+    {
+      "name": "ten corrections yield 1000 entities and 1010 revisions",
+      "result": "PASS"
+    },
+    {
+      "name": "changed body with old token is rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "tenant mismatch denied before writes",
+      "result": "PASS"
+    },
+    {
+      "name": "crash after 37 committed rows resumes without repeated revisions",
+      "result": "PASS"
+    },
+    {
+      "name": "stale optimistic version denied",
+      "result": "PASS"
+    },
+    {
+      "name": "two same-version edits: one accepted in sequential model",
+      "result": "PASS"
+    },
+    {
+      "name": "provider unavailable does not become identity verified",
+      "result": "PASS"
+    },
+    {
+      "name": "tenant-scoped business keys keep equal local IDs separate",
+      "result": "PASS"
+    },
+    {
+      "name": "zero-MAD reference abstains",
+      "result": "PASS"
+    }
+  ]
+}

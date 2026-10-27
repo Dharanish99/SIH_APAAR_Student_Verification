@@ -1,81 +1,43 @@
 # SIH APAAR Student Verification
-### Research workspace · SIH26263 · AICTE
 
-A shared research workspace for an **APAAR ID-based Student Data Management and Verification Platform for AICTE-approved institutions**.
+Research and solution design for the supplied SIH26263 brief. Consolidated on **27 October 2026**.
 
-**Current phase:** research planning. The folders contain assignments and templates; no completed research, production service, verified government integration or accepted architecture is claimed.
+**Phase:** evidence-backed proposal, ready for human review. Research includes GitHub contributions, ten relevant Notion snapshots, Gopika's uploads, specialist agent research and a reproduced synthetic experiment. No application, live government integration or field pilot is claimed.
 
-[Start contributing](CONTRIBUTING.md) · [Research plan](docs/research-plan.md) · [Team status](docs/status.md) · [AI agent instructions](AGENTS.md) · [Source guide](docs/source-guide.md)
+## Read the result
 
-## The problem we are investigating
+- [Solution report](docs/solution-report.md) / [PDF](output/pdf/solution-report.pdf): idea, alternatives, user journeys, validated constraints, complete proposed stack, MVP and evaluation.
+- [Research audit](docs/research-audit.md): every person's allotment, what was found, what agents completed and remaining external work.
+- [Requirement coverage](docs/requirements.md): all ten supplied requirements and their acceptance gates.
+- [Mind map](docs/mind-map.md): complete map, editable source and canvas.
+- [Validation record](docs/validation.md): what was actually checked and what remains untested.
 
-How can institutions submit trustworthy student-level admission data, connect records to academic identity, identify genuine inconsistencies, and enable authorised verification with appropriate privacy?
+## Research base
 
-The supplied statement covers uploads and updates, intake and student categories, automated validation, dashboards, authorised verification, verifiable records, interoperability, security/consent/audit history, reports and certificate display of APAAR plus student ID.
-
-Read the [problem brief and scope](docs/problem-brief.md). The supplied third-party statement is a starting reference; verify the official statement and event dates before submission. This is a student project, not an official AICTE/APAAR service.
-
-## Team and research ownership
-
-| Member | Responsibility | Assignment and updates |
-|---|---|---|
-| Gopika | Institutional workflows, user needs and existing solutions | [Open folder](research/gopika/README.md) |
-| Sudhan | APAAR, ABC, DigiLocker/NAD and integration feasibility | [Open folder](research/sudhan/README.md) |
-| Pranav | AICTE admission rules and compliance logic | [Open folder](research/pranav/README.md) |
-| Dharanish R P | Data architecture, validation and anomaly detection | [Open folder](research/dharanish/README.md) |
-| Sudhir | Privacy, security, consent and credential verification | [Open folder](research/sudhir/README.md) |
-| Kanishkar B **(Leader)** | Team lead: synthesis, feasibility, MVP and evaluation | [Open folder](research/kanishkar/README.md) |
-
-The named roles were assigned by the team on **23 October 2026**. They do not imply GitHub account permissions. GitHub usernames for review routing have not been supplied; no CODEOWNERS identities are guessed.
-
-## Start here in 10 minutes
-
-1. Read [the problem brief](docs/problem-brief.md) and [research standards](docs/research-standards.md).
-2. Open your folder above and read its assignment.
-3. Add evidence to your `sources.csv`, write your own explanations in `findings.md`, and update `progress.md`.
-4. Use [templates](templates/README.md) for interviews, experiments and cross-member review.
-5. Open a focused pull request following [CONTRIBUTING.md](CONTRIBUTING.md). Kanishkar coordinates review.
-
-**For an AI agent:** read [AGENTS.md](AGENTS.md), [team.json](team.json), the member's assignment and current findings before editing. Begin with the requested research task; do not mark placeholders as results.
-
-## Where information belongs
-
-| Location | Purpose |
+| Human owner | Research and provenance |
 |---|---|
-| [research/](research/README.md) | Six member workspaces; detailed assignments, findings, evidence and progress |
-| [docs/](docs/README.md) | Shared scope, plan, standards, requirements, decisions, risks and status |
-| [templates/](templates/README.md) | Reusable interview, experiment and review forms |
-| [team.json](team.json) | Machine-readable member/role/path mapping |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Browser and Git contribution instructions |
-| [AGENTS.md](AGENTS.md) | Repository-wide instructions for AI assistants |
-| [.github/](.github/README.md) | Research issue, blocker and pull-request templates |
+| Gopika | [Workflows, field mapping and opportunities](research/gopika/findings.md); [original uploads](research/gopika/original-upload/) |
+| Sudhan | [Integration review and corrected assumptions](research/sudhan/integration-review.md); [original contribution](research/sudhan/original-2026-10-25/) |
+| Pranav | [Admission policy, rule catalogue and worked cases](research/pranav/findings.md) |
+| Dharanish R P | [Architecture, imports, feasibility and reproduced experiment](research/dharanish/findings.md) |
+| Sudhir | [Security, privacy, legal status and trust](research/sudhir/findings.md) |
+| Kanishkar B, human team lead | [Consolidation and feasibility](research/kanishkar/findings.md) |
 
-## What a successful research phase produces
+Each workstream has a source ledger and progress log. [Provenance](research/provenance/README.md) preserves original Notion context and attachment hashes. AI supplements are identified; no human reviewer or interview is invented. Sudhan and Sudhir are distinct contributors.
 
-- Evidence of actual user problems and a fair comparison with existing systems.
-- Documented integration availability and clearly labelled simulation boundaries.
-- Versioned admission rules with worked valid, invalid and ambiguous cases.
-- A feasible data design and reproducible synthetic experiments.
-- Access, consent and verification design with realistic threat analysis.
-- A lead-reviewed solution brief, MVP, evaluation plan and unresolved dependency list.
+## Evidence boundary
 
-See the [requirements matrix](docs/requirements.md) and [research plan](docs/research-plan.md).
+The strongest result is a design constrained by current primary documentation, with an independently reproduced **1,000-row fictional experiment**. User benefit, production security, scale, current institution-specific policy packs and live provider access still require testing. The [official SIH cross-check](docs/official-problem-verification.md) remains unresolved because the portal returned 403; the supplied statement is the explicit scope baseline.
 
-## Working principles
+## Reproduce the research checks
 
-- Use AI to accelerate learning; open sources, check applicability and explain conclusions yourself.
-- Separate **verified facts, observations, assumptions and proposals**.
-- Identifier format, identity verification, enrolment validity and credential authenticity are different checks.
-- Repeated enrolment is a review signal, not automatically fraud.
-- No real student IDs, admission exports, private interview details, credentials or API secrets in this public repository.
-- Use synthetic data and label every simulated government response.
-- Choose technology after evidence and constraints are understood.
+```sh
+node research/dharanish/experiments/reproduce.cjs
+python tools/validate_research.py
+```
 
-## Project status and governance
+The first checks the preserved sequential synthetic model; the second checks documentation structure and source preservation. Neither runs an application or proves compliance.
 
-No application has been implemented yet, so there are no application install/run commands.
-The initial setup does not configure branch protection, invite collaborators or grant a software licence.
-Kanishkar coordinates research decisions; repository access is managed by its owner.
-Future application code should be added only when a concrete implementation task is assigned.
+[AGENTS.md](AGENTS.md) defines this research workflow and specialist roles. [Team status](docs/status.md), [decisions](docs/decisions.md), [risks](docs/risks.md), [research standards](docs/research-standards.md) and [contributing](CONTRIBUTING.md) retain human review governance. [team.json](team.json) preserves the original ownership mapping.
 
-[Repository](https://github.com/Dharanish99/SIH_APAAR_Student_Verification) · [Supplied problem statement](https://zaidsayyed.in/tools/sih-problem-statements/sih26263)
+This is a student research project, not an official AICTE, APAAR or DigiLocker service. Original contributions and historical source snapshots remain distinguishable from the current synthesis. No real student data or government credentials were used.

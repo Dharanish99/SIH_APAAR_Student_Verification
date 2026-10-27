@@ -2,14 +2,19 @@
 
 [Project](../README.md)
 
-| Document | Purpose | Steward |
-|---|---|---|
-| [Problem brief](problem-brief.md) | Scope and explicit unknowns | Kanishkar |
-| [Research plan](research-plan.md) | Sequence, dependencies and completion criteria | Kanishkar |
-| [Research standards](research-standards.md) | Evidence, AI usage and review expectations | Everyone |
-| [Source guide](source-guide.md) | Primary-source starting points and repository design references | Everyone |
-| [Requirements](requirements.md) | Coverage of all statement requirements | Kanishkar with domain owners |
-| [Status](status.md) | Shared view of current progress | Kanishkar with owners |
-| [Decisions](decisions.md) | Proposed and accepted decisions with provenance | Kanishkar |
-| [Risks](risks.md) | Uncertainties, impact, mitigation and ownership | Kanishkar with owners |
-| [Solution brief](solution-brief.md) | Consolidated research output and MVP | Kanishkar |
+| Document | Purpose |
+|---|---|
+| [Solution report](solution-report.md) | Recommended idea, alternatives, journeys, stack and evaluation |
+| [Solution brief](solution-brief.md) | Short explanation for team discussion |
+| [Mind map](mind-map.md) | Complete visual overview and editable sources |
+| [Assignment audit](research-audit.md) | Six-person provenance and completion mapping |
+| [Requirements](requirements.md) | Coverage and acceptance gates for ten supplied requirements |
+| [Validation](validation.md) | Executed checks, artifact QA and honest limits |
+| [Status](status.md) | Current evidence and pending human work |
+| [Decisions](decisions.md) | Accepted ownership plus proposed design choices |
+| [Risks](risks.md) | External dependencies and mitigations |
+| [Official statement verification](official-problem-verification.md) | Authority gap and retrieval attempts |
+| [Problem brief](problem-brief.md) | Supplied scope baseline |
+| [Research plan](research-plan.md) | Original plan and readiness gates |
+| [Research standards](research-standards.md) | Source, AI and review expectations |
+| [Source guide](source-guide.md) | Discovery starting points |

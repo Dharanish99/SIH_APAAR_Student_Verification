@@ -1,0 +1,8 @@
+# Preserve imported source bytes so recorded SHA-256 values survive any checkout.
+*.pdf binary
+*.png binary
+research/gopika/original-upload/** -text
+research/sudhan/original-2026-10-25/** -text
+research/sudhir/original-2026-10-23/** -text
+research/dharanish/experiments/notion-original/** -text
+research/provenance/notion/** -text

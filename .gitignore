@@ -20,3 +20,8 @@ node_modules/
 .DS_Store
 Thumbs.db
 # Review git diff before every commit: ignores are not a security boundary.
+
+# Local source caches are not republished
+.cache/
+.evidence-cache/
+tmp/

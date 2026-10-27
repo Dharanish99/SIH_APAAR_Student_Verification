@@ -1,0 +1,13 @@
+scenario_id,fictional_trigger,provider_fixture,expected_proposed_state,expected_action,execution_status,limitation
+SUD-C01,Consenting synthetic account matches submitted internal fixture reference,SIMULATED account link success,ACCOUNT_LINK_MATCH,Retain minimal evidence and keep enrolment review separate,Designed not executed,No real student or provider call
+SUD-C02,Submitted identifier contains alphabetic character,No provider call,FORMAT_MISMATCH,Show row error with editable input,Designed not executed,ASCII shape only no checksum
+SUD-C03,Applicant has no APAAR available,No provider call,LINKAGE_PENDING,Keep internal student reference and responsible office,Designed not executed,Final submission eligibility remains policy-dependent
+SUD-C04,Returned account identifier differs from claimed fixture,Simulated mismatch,MISMATCH_REVIEW,Do not merge; offer correction and case review,Designed not executed,Not proof of impersonation
+SUD-C05,Grant expires during review,Simulated invalid_token401,PERMISSION_PENDING,Stop fetching and reconnect if appropriate,Designed not executed,Retention has separate purpose policy
+SUD-C06,Approved client lacks permission for requested field,Simulated insufficient_scope403,DENIED,Record access dependency without broader guessed scopes,Designed not executed,No credentials available
+SUD-C07,Account has no linked APAAR,Simulated apaar_not_linked404,NOT_LINKED,Explain account linkage route,Designed not executed,Not registry-wide nonexistent ID
+SUD-C08,Provider lacks data for account,Simulated apaar_not_available404,UNAVAILABLE,Preserve case and refer to authoritative correction,Designed not executed,Not fraud
+SUD-C09,Provider times out,Simulated timeout,UNAVAILABLE,Visible freshness; bounded backoff only under approved retry policy,Designed not executed,One-call recommendation and retry contract require provider confirmation; no service level measured
+SUD-C10,Source corrects earlier identifier or details,Simulated new evidence version,SUPERSEDED_AND_RECHECKED,Preserve historical evidence and create revision,Designed not executed,Source authority must approve correction
+SUD-C11,Institution asks for another institution's student details,No provider call,DENIED,Tenant check before retrieval; log safe event,Designed not executed,Regulator privileges need separate authority
+SUD-C12,Same learner appears in two legitimate programmes,Simulated same internal learner,REVIEW_REQUIRED_OR_ALLOWED_BY_RULE,Apply scoped policy and timing evidence without fraud label,Designed not executed,See policy workstream for applicable rules

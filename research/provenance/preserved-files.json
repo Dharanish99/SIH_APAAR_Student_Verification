@@ -1,0 +1,136 @@
+{
+  "created_on": "2026-10-27",
+  "meaning": "Integrity of stored snapshots and original attachments; hashes do not verify their claims or authorship.",
+  "files": [
+    {
+      "path": "research/gopika/original-upload/findings.md",
+      "bytes": 10999,
+      "sha256": "bc32eedd8161977e007826ad8cf648c135dc29d90f72c0e0d15e93fd4ca5af99"
+    },
+    {
+      "path": "research/gopika/original-upload/progress.md",
+      "bytes": 3393,
+      "sha256": "387f6ca9f8386ef8f3a032e7d9aa9388ef10a779805ac8e976134d89fcafb5a2"
+    },
+    {
+      "path": "research/gopika/original-upload/sources.csv",
+      "bytes": 3053,
+      "sha256": "eea8b2d8b49d46bbb86452aa1ec490677bc4ac7e839344c5f5ee601b15541a18"
+    },
+    {
+      "path": "research/sudhan/original-2026-10-25/findings.md",
+      "bytes": 15171,
+      "sha256": "45c38fe74db273f40ae7b2e6e31515f2d8ca938bb90bbc931a1f1ba17faed402"
+    },
+    {
+      "path": "research/sudhan/original-2026-10-25/progress.md",
+      "bytes": 3918,
+      "sha256": "1e21658ffb4a71d9b415b2b55e502b8de83c0a6fba6fc7ef6027f8ab6ee7367a"
+    },
+    {
+      "path": "research/sudhan/original-2026-10-25/README.md",
+      "bytes": 374,
+      "sha256": "f78bfe10fba13e16df3021c776116eede652f92965576bd93736f565a5b0d266"
+    },
+    {
+      "path": "research/sudhan/original-2026-10-25/sources.csv",
+      "bytes": 2915,
+      "sha256": "1313a5e070abea98d115251419957b756d50f1d8c376b0a16d8349691b6f6207"
+    },
+    {
+      "path": "research/sudhir/original-2026-10-23/findings.md",
+      "bytes": 1591,
+      "sha256": "d32462ff80c00c65a073a69e3afeb9da29e6357c4f8fb35f5c2b5bd13730df68"
+    },
+    {
+      "path": "research/sudhir/original-2026-10-23/progress.md",
+      "bytes": 626,
+      "sha256": "3d8624fc019aae8157b0679c559b2be92d8eb6a84d41d0e83fde34079b025547"
+    },
+    {
+      "path": "research/sudhir/original-2026-10-23/sources.csv",
+      "bytes": 160,
+      "sha256": "f43ab3af41ef660eb7cd46ba78326fee1ec8dc8afea027af362ec061124ad3bc"
+    },
+    {
+      "path": "research/dharanish/experiments/notion-original/dharanish-experiment-results.json",
+      "bytes": 2107,
+      "sha256": "b8a90404a31dd89bfcd37ad6d71918f4870d411882ae20171727cc54cad8c6ab"
+    },
+    {
+      "path": "research/dharanish/experiments/notion-original/dharanish-reference-cohort.csv",
+      "bytes": 911,
+      "sha256": "fdc20f4b87719b63bd0dc415119ca295a252530229e8380db70a2017c3ee0b30"
+    },
+    {
+      "path": "research/dharanish/experiments/notion-original/dharanish-research-harness.txt",
+      "bytes": 8502,
+      "sha256": "cd04e4bf1280dc0553ccba80d1d4dd42a33546b3c1729d7497d7916bc13be4f0"
+    },
+    {
+      "path": "research/dharanish/experiments/notion-original/dharanish-sources.csv",
+      "bytes": 8185,
+      "sha256": "ee2c24ff6b3d957ef0556e0fde7db7fd745397eb3d0bcb667eaf8da45ff528af"
+    },
+    {
+      "path": "research/dharanish/experiments/notion-original/dharanish-synthetic-labels.csv",
+      "bytes": 15482,
+      "sha256": "f8536b672e598506cf9ddd6ab4ceb621bebcd3ee862e2397c7afdbcaf1a80bb8"
+    },
+    {
+      "path": "research/dharanish/experiments/notion-original/dharanish-synthetic-records.csv",
+      "bytes": 104664,
+      "sha256": "2875991459dee8b4fbce6831ea1808429807165a59b680399a4d0982fb883128"
+    },
+    {
+      "path": "research/provenance/notion/current-reporting-evidence.md",
+      "bytes": 15301,
+      "sha256": "98eee0200815023c09ad79be35ece4deae7b2838523dba7fa7e0c0a7eff462e3"
+    },
+    {
+      "path": "research/provenance/notion/dharanish-architecture.md",
+      "bytes": 15096,
+      "sha256": "3efd0e53b86c75267654c9563f90622de9be57b193f6d849a17ef28d0dec8832"
+    },
+    {
+      "path": "research/provenance/notion/dharanish-experiment.md",
+      "bytes": 12940,
+      "sha256": "2216696d6d04e41c1f9775f475fb6f5b2d043a30afb27bef1ea597b3b7134dc3"
+    },
+    {
+      "path": "research/provenance/notion/dharanish-feasibility.md",
+      "bytes": 10465,
+      "sha256": "84148eec3a893332317794135f63c24ae41de9ffc41d45937c9c6781f5b64ad7"
+    },
+    {
+      "path": "research/provenance/notion/dharanish-imports.md",
+      "bytes": 15894,
+      "sha256": "7f370ac62ba996b16f03ac66d6a560173e4a89164de9a7aafd1b33a7e6119709"
+    },
+    {
+      "path": "research/provenance/notion/dharanish-notebook.md",
+      "bytes": 11721,
+      "sha256": "c75dc7f2bc7fcea1e6368c2ea2ab68ab7be34cec710024b43356bc53dc09a5e4"
+    },
+    {
+      "path": "research/provenance/notion/dharanish-sources.md",
+      "bytes": 17164,
+      "sha256": "8e0ae118fab0a5b0817ae6cde3828599395942a878c6595cefe761c7b2d299e6"
+    },
+    {
+      "path": "research/provenance/notion/gopika-revised-allotment.md",
+      "bytes": 23982,
+      "sha256": "4c912032b30704a7a886270d119f79125b181dee0054c645768549772c137eda"
+    },
+    {
+      "path": "research/provenance/notion/kanishkar-notebook.md",
+      "bytes": 28330,
+      "sha256": "d325f55a509eb6709a11ff7d09db74afcdb7157b0b3ae499724b431ed43acf17"
+    },
+    {
+      "path": "research/provenance/notion/team-hub.md",
+      "bytes": 10318,
+      "sha256": "08f0df54e03bb03a401f18c0599d813d24a67abfb78da6f8e45562a5fc1b0668"
+    }
+  ]
+}

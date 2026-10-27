@@ -3,9 +3,9 @@
 
 [Project](../../README.md) · [Findings](findings.md) · [Evidence register](sources.csv) · [Progress](progress.md)
 
-**Owner:** Sudhir  
-**Review partner:** Sudhan  
-**Starting status:** Not started  
+**Owner:** Sudhir
+**Review partner:** Sudhan
+**Current status:** AI desk research ready for human review (round 2026-10-26; rechecked 2026-10-27)
 **Mission:** Define trustworthy access and credential verification with appropriate data protection.
 
 ## Questions to answer
@@ -24,11 +24,13 @@
 5. Review proposed integration permissions with Sudhan and schema/storage decisions with Dharanish.
 
 ## Required outputs
-- [ ] Role/action/resource permission matrix.
-- [ ] Data inventory: field, purpose, source, visibility, proposed retention and rationale.
-- [ ] Consent and third-party verification workflow.
-- [ ] Threat model with at least eight abuse cases, mitigations and residual risks.
-- [ ] Credential verification design and list of unresolved legal/access questions.
+- [x] Proposed role/action/resource permission matrix.
+- [x] Data inventory: field, purpose, source, visibility, proposed retention and rationale.
+- [x] Proposed consent and third-party verification workflow.
+- [x] Threat model with thirteen abuse cases, mitigations and residual risks.
+- [x] Credential verification design and unresolved legal/access questions.
+
+Checkmarks mean research artifacts exist, not implemented controls, passed security tests or Sudhir's approval. See [findings](findings.md), [legal status](legal-status.md), [privacy design](privacy-design.md), [threat model](threat-model.md) and [AI critique](critique-log.md). Human review and teach-back remain pending.
 
 Write the main brief in [findings.md](findings.md); use additional files only when they improve clarity. Use the [shared templates](../../templates/README.md).
 
@@ -39,7 +41,7 @@ Knowing an ID is not authorisation. Do not claim legal compliance based on a gen
 
 ## Evidence starting points
 Use source entries **S04, S05, S08** in the [source guide](../../docs/source-guide.md).
-Check current versions, scope and access independently. Record actual evidence in [sources.csv](sources.csv), with IDs such as `SUH-001`.
+Check current versions, scope and access independently. Record actual evidence in [sources.csv](sources.csv), with IDs such as `SUH-101`.
 Research additional primary sources as needed; this list is not exhaustive.
 
 ## Quality bar

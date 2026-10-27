@@ -1,0 +1,96 @@
+mindmap
+  root((SetuTrace))
+    01  People and jobs
+      Student: inspect own claims, challenge errors, follow an appeal
+      Operator: reuse ERP exports and resolve actionable exceptions
+      Approver: review differences and freeze a reporting snapshot
+      Regulator: scoped totals and internal authorised case review
+      Verifier: narrow current assertion with a recipient-bound grant
+      Assisted access: no dependency on the disputed APAAR to seek help
+    02  Useful product hypothesis
+      SetuTrace sits beside ERP and NAD; local operations remain there
+      Evidence card: institution claim, provider evidence, rule and resolution
+      Trace source revision through findings, snapshots and corrections
+      Explain changed totals and identify the responsible source owner
+      Compare with ERP replacement, API-first registry and a checklist
+      Choose the simpler checklist if the product adds no net value
+    03  Reporting and correction loop
+      ERP export to staged CSV to versioned mapping to change preview
+      Commit bounded chunks with revisions, audit events and outbox
+      Explain findings; approver freezes explicit accepted row versions
+      Local acceptance, export readiness and official receipt are distinct
+      Challenge to evidence to source correction or refusal to appeal
+      Re-evaluate affected findings and supersede old assertions
+      Record legal effective time separately from acknowledgement time
+    04  Policy and inclusion
+      Scope rules by institution, campus, programme, year and entry route
+      Approval versions and effective dates determine counting scope
+      Missing current rule pack returns UNKNOWN; no universal quotas
+      Nationality, candidature and seat entitlement remain distinct
+      Concurrent programmes can be legitimate; review timing and rules
+      Missing or foreign APAAR keeps capture open and linkage pending
+      14 proposed rules and 22 fictional cases; no automatic sanction
+    05  Provider and system boundaries
+      Documented APAAR route is token-account linked, not bulk ID lookup
+      Sponsor, use case, scopes and live access remain external gates
+      No public sandbox promise or unapproved recurring polling
+      Not-linked, denied, mismatch, outage and stale evidence differ
+      Minimise retained response; credit data is not all enrolments
+      CSV first; ERP, AICTE and award adapters require real contracts
+      Mock provider and issuer labels remain explicit in demonstrations
+    06  Privacy and trust
+      Separate reporting authority, provider permission and disclosure grant
+      Tenant/resource checks on API, jobs, storage, downloads and exports
+      Uniform institution receipts; matches internal to authorised regulator
+      No raw-ID public search, match bit or authority from a QR alone
+      Bind verifier to recipient, purpose, fields, revision and expiry
+      Recheck grants and current status; revoke future access
+      DPDP stages, SPDI applicability, retention and guardian review gated
+    07  Architecture and data
+      Institution-local key and internal UUID; no automatic person merge
+      Identity claim, enrolment, approval and credential are separate
+      Immutable revisions, source evidence and effective/recorded times
+      Idempotency token plus content and mapping fingerprint
+      Expected-version correction prevents silent stale overwrites
+      PostgreSQL constraints plus atomic audit/outbox; leased worker
+      Provider calls outside transactions; visible partial/stale states
+    08  Core implementation stack
+      React + TypeScript + Vite; accessible responsive web interface
+      Python + FastAPI + Pydantic + generated OpenAPI contracts
+      PostgreSQL 18 + SQLAlchemy + Alembic; separate Python worker
+      CSV first; controlled JSON/CSV/PDF; read-only XLSX later
+      Institution OIDC; Keycloak synthetic option; secure server session
+      Private S3-compatible storage; managed signing keys and secrets
+      Pin supported dependencies at implementation; no app built yet
+    09  Operations and testing stack
+      Docker Compose development; GitHub Actions and dependency scans
+      Ubuntu LTS + Caddy; managed DB, private storage and tested backups
+      OpenTelemetry, Prometheus/Grafana and redacted structured logs
+      pytest + Hypothesis; real PostgreSQL/Testcontainers race tests
+      Playwright + axe-core; Locust for future measured workloads
+      Test tenant isolation, replay, revoke/export races and restoration
+      No Redis, Kafka, blockchain, LLM adjudication or Kubernetes needed
+    10  Requirement coverage and MVP
+      R01-R03: scoped imports, required dimensions and reasoned checks
+      R04-R06: dashboards, authorised assertion and issuer/status trust
+      R07-R09: adapter contracts, permissions/audit and defined reports
+      R10: synthetic issuer-controlled APAAR plus local-ID template
+      First build: two fictional tenants and one narrow policy pack
+      Live linking, real rules, real certificates and matching are gated
+      10k records / 20 users is a future target; only 1k model executed
+    11  Evidence and provenance
+      All six human allotments reconciled; originals remain identifiable
+      GitHub + ten Notion snapshots + three supplied Gopika files
+      Specialist research and independent innovator exchanged critiques
+      1,000 fictional rows: eight comparisons and 12 model checks match
+      Statistical increment: 10 useful labelled alerts + 10 false alerts
+      No field study, real DB test, government call or human approval
+      Official SIH wording and complete current amendments still open
+    12  Pilot gates and measures
+      Confirm workflow, authority, current rules and correction ownership
+      Compare total staff/student effort against an improved checklist
+      Synthetic implementation tests precede any permitted shadow pilot
+      Proposed targets: 90% task success; 20% lower median staff time
+      No increase in unresolved student cases; report sample and failures
+      Stop on disclosure, wrong-person link, silent overwrite or lost control
+      USD42 VM+encrypted DB example excludes the rest of the stack

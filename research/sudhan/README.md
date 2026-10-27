@@ -3,9 +3,9 @@
 
 [Project](../../README.md) · [Findings](findings.md) · [Evidence register](sources.csv) · [Progress](progress.md)
 
-**Owner:** Sudhan  
-**Review partner:** Sudhir  
-**Starting status:** Not started  
+**Owner:** Sudhan
+**Review partner:** Sudhir
+**Current status:** Desk research complete; provider access, human review and field validation pending. See the [current integration review](integration-review.md).<br>
 **Mission:** Establish what can actually be verified or exchanged and what access is required.
 
 ## Questions to answer
@@ -24,11 +24,13 @@
 5. Define verification statuses and failure responses, and send blocking access dependencies to Kanishkar immediately.
 
 ## Required outputs
-- [ ] Ecosystem map and explanation in your own words.
-- [ ] Integration matrix: operation, provider, source, access, response evidence, tested status, fallback.
-- [ ] Verification-state and outage-handling proposal.
-- [ ] External dependency list and official clarification questions.
-- [ ] A small authorised integration experiment if access exists; otherwise an explicitly simulated contract proposal.
+- [x] Ecosystem map and explanation: integration review section 1.
+- [x] Integration matrix: operation, provider, source, access, response evidence, tested status, fallback; sections 2–4.
+- [x] Verification-state and outage-handling proposal: section 5.
+- [x] External dependency list and official clarification questions: sections 6 and 9.
+- [x] Explicitly simulated contract proposal: section 8 and [12 designed scenarios](contract-scenarios.csv). No experiment was executed and no authorised live access is evidenced.
+
+These checks record AI-assisted desk-research coverage, not human approval or implemented capability. The original human findings remain preserved and their corrections are explicit.
 
 Write the main brief in [findings.md](findings.md); use additional files only when they improve clarity. Use the [shared templates](../../templates/README.md).
 

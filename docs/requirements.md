@@ -1,27 +1,18 @@
-# Requirement coverage
+# Requirement coverage and acceptance gates
 
-Baseline: paraphrase of the supplied SIH26263 statement; official cross-check remains open.
-Kanishkar stewards this matrix. Ownership means research responsibility, not completed implementation.
+Baseline: ten requirements paraphrased from the supplied SIH26263 statement. [Official wording](official-problem-verification.md) remains unconfirmed. All rows describe **proposed behavior**; none is an implemented capability. [Report](solution-report.md) explains the complete concept.
 
-| ID | Requirement | Primary owner | Supporting owners | Evidence/output needed | Status |
-|---|---|---|---|---|---|
-| R01 | Secure institutional upload/update using APAAR | Dharanish | Sudhan, Sudhir | Import and update design; institution authentication and ID linkage | Not started |
-| R02 | Intake, enrolment, supernumerary, NRI, OCI, FN and relevant fields | Pranav | Dharanish, Gopika | Field dictionary; authoritative approval and category rules | Not started |
-| R03 | Duplicates, invalid/missing IDs, excess intake and inconsistency checks | Dharanish | Pranav, Sudhan | Worked rule cases; validation and review outcomes | Not started |
-| R04 | Institution and AICTE monitoring dashboards | Gopika | Dharanish | User questions, metric definitions, freshness assumptions | Not started |
-| R05 | Authorised stakeholder verification | Sudhir | Sudhan | Permission/disclosure matrix and verification flow | Not started |
-| R06 | Verifiable records linked to academic identity | Sudhir | Sudhan, Dharanish | Issuer/evidence model, integrity and validity lifecycle | Not started |
-| R07 | Institutional and AICTE integration/API capability | Sudhan | Dharanish, Gopika | Documented interfaces, access status and fallback | Not started |
-| R08 | Security, privacy, authentication, roles, audit and consent | Sudhir | All owners | Threat model, access/data policies and evidence | Not started |
-| R09 | Policy, accreditation, regulatory and monitoring reports | Gopika | Pranav, Dharanish | Report users, fields, definitions and justified access | Not started |
-| R10 | APAAR plus student ID certificate display/printing | Sudhir | Gopika, Sudhan, Dharanish | Awarding authority, display requirements and disclosure design | Not started |
+| ID / requirement | Proposed response | Evidence and acceptance condition | Delivery boundary |
+|---|---|---|---|
+| R01 Secure upload/update using APAAR | Institution-scoped staged CSV, local UUID, separate reported/linkage status, approver snapshot | [Dharanish](../research/dharanish/findings.md), [security](../research/sudhir/privacy-design.md). Replay is no-op; stale correction conflicts; wrong tenant denied; linkage optional while unresolved | Core synthetic MVP; real provider linking conditional |
+| R02 Intake, enrolment and NRI/OCI/FN/supernumerary fields | Versioned programme/year/entry-route/bucket definitions; separate nationality, candidature and seat eligibility | [Policy catalogue](../research/pranav/rule-catalogue.md), [field map](../research/gopika/findings.md). Missing current approval returns UNKNOWN; no universal percentage | Core schema and fictional rule pack; real rules require authority |
+| R03 Duplicates, missing IDs, excess intake and conflicts | Deterministic reasoned findings; internal collision review; no auto-rejection | [22 cases](../research/pranav/worked-cases.md), [reproduction](../research/dharanish/experiments/README.md). Preserve legal concurrency, foreign/missing-ID and correction paths; uniform receipts | Core local rules; cross-institution production matching gated; statistics later |
+| R04 Institution and AICTE dashboards | Separate role views with numerator/denominator, source time, snapshot, open cases and freshness | [Workflows](../research/gopika/findings.md), [permissions](../research/sudhir/privacy-design.md). Counts reconcile to permitted records; stale projections labelled; no peer match bit | Synthetic role demonstration; real AICTE role needs mandate |
+| R05 Authorised verification | Authenticated recipient requests purpose-limited claim; independent disclosure grant | [Security](../research/sudhir/findings.md). Wrong audience, expired/revoked grant or superseded revision denied at retrieval/export time | Narrow online demo; real recipients and lawful basis gated |
+| R06 Verifiable identity-linked record | Institution attestation with trusted issuer, version, evidence class and current status | [Credential lifecycle](../research/sudhir/privacy-design.md). Signature integrity, issuer mandate and underlying truth assessed separately; revoked/superseded cannot appear current | Synthetic issuer only; interoperable VC later |
+| R07 Institutional/AICTE interfaces | Mapping-versioned CSV first; documented internal API; adapter contracts; separate acknowledgement evidence | [Sudhan](../research/sudhan/integration-review.md). Token-linked provider route only; errors retain uncertainty; no fabricated official API | CSV/internal API demo; government connectors conditional |
+| R08 Security, privacy, roles, audit and consent | Institution scopes across API/jobs/files/export; minimal data; separate reporting basis/OAuth permission/disclosure grant | [13 threats](../research/sudhir/threat-model.md), [legal stages](../research/sudhir/legal-status.md). Negative permission, revoke, restore and logging tests required | Proposed controls; no security or compliance certification |
+| R09 Regulatory/accreditation/policy reports | Explicit report definitions, approved snapshots, versioned mappings, provenance and export manifests | [Gopika](../research/gopika/findings.md), [policy](../research/pranav/findings.md). Totals reproduce from same row versions; missing category distinguished from zero | Sample synthetic reports; each official format requires agreement |
+| R10 APAAR plus student-ID certificate display | Awarding-body-controlled display template with synthetic values and private verification entry point | [Security](../research/sudhir/privacy-design.md), [integration](../research/sudhan/integration-review.md). Both identifiers supported in approved template; QR contains opaque reference, no public identifier lookup | Design/sample only; actual certificate issuance requires awarding authority and confirmed requirement |
 
-## Links to findings and acceptance criteria
-As research develops, add precise links here. For each requirement record:
-- Finding/source IDs and proposed feature.
-- Testable expected outcome.
-- Integration/access dependency.
-- Build now / Simulated in demo / Later, with rationale.
-- Reviewer, review date and unresolved issues.
-
-No requirement is satisfied merely because its folder or template exists.
+**Review:** AI coverage review only, 27 October 2026. Human approval remains pending. Passing an isolated check is never a universal claim that a student or admission is valid.

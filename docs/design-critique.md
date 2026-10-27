@@ -39,3 +39,7 @@ Use deterministic rules first; reconsider statistical triage only after represen
 Before any real pilot, require an accountable operator, applicable purpose/retention/guardian decisions, current rule approval, institutional and provider permissions where relevant, and independent security review. No agent consensus satisfies those gates. Unresolved official SIH wording is separately tracked in the [verification note](official-problem-verification.md).
 
 Evidence anchors: [integration review](../research/sudhan/integration-review.md), [privacy design](../research/sudhir/privacy-design.md), [security critique log](../research/sudhir/critique-log.md), [policy cases](../research/pranav/worked-cases.md), [synthetic reproduction](../research/dharanish/experiments/README.md). The final [solution report](solution-report.md) incorporates the responses above.
+
+## Lead review of late incoming contributions
+
+The final fetch discovered newer human-owned Pranav and Sudhir research. The specialists read the incoming files, preserved their useful foundations and reconciled overclaims against the current evidence. Neither identified a reversal of the selected concept. Their [policy reconciliation](../research/pranav/human-contribution-review.md) and [security reconciliation](../research/sudhir/human-contribution-review.md) record the details. This was a lead/specialist update after the independent innovator saved the report, not a claim that the innovator saw these later commits.

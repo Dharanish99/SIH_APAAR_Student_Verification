@@ -2,6 +2,8 @@
 
 Author: security research agent, completing Sudhir's assigned role. Research round: 2026-10-26 (Asia/Kolkata); completion recheck: 2026-10-27. Status: desk research and proposed design; no implementation, pilot or human approval.
 
+Provenance update: Sudhir's substantive member submission was recovered after this AI draft began; see the [contribution reconciliation](human-contribution-review.md). Its retained design work is credited separately from subsequent AI checks.
+
 ## Recommendation
 
 Build an accountable evidence-and-correction service with purpose-specific verification. An institution attests its enrolments; a provider supplies evidence within its documented scope; an authorised reviewer decides a conflict; an employer sees only an approved disclosure. A signature establishes integrity and attribution, not the truth of the assertion. A QR code conveys a reference, not permission. The [W3C credential model](https://www.w3.org/TR/vc-data-model-2.0/#verification) explicitly distinguishes verification from factual truth (SUH-107).

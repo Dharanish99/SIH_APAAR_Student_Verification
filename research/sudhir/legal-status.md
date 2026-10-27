@@ -28,6 +28,12 @@ The [December corrigendum](https://www.meity.gov.in/static/uploads/2025/12/3c7eb
 
 Current IT Act/SPDI applicability remains a **specific legal-review item**. The full 2011 Rules' old MeitY file returned 404 and an alternate official IndiaCode retrieval timed out (SUH-115); full-text verification remains open. On 2026-10-27 the [24 August 2011 clarification was recovered from official PIB](https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=74990) (SUH-116). It distinguishes contractual handling for another legal entity from a direct relationship with the information provider when discussing rules 5 and 6, and addresses organisational privacy policy and electronic consent. Its application depends on the operator's actual role and contracts; it does not establish that this proposed service is exempt. Do not treat every student field as SPDI or infer that the DPDP transition removes current protections.
 
+## Electronic evidence and credential recognition
+
+The recovered contributor ledger's general section 65B reference needs qualification. The [official Bharatiya Sakshya Adhiniyam consolidation](https://www.indiacode.nic.in/indiacode/bitstream/123456789/20063/1/aa202347.pdf) (SUH-117) records commencement on 1 July 2024. Sections 61-63 address electronic evidence and conditional admissibility; section 170 saves specified proceedings already pending at commencement under the former Indian Evidence Act. The relevant regime therefore depends on the matter. This is a targeted text check, not an exhaustive case-law review.
+
+A digital signature or protected audit history alone does not establish admissibility, truth or issuer mandate. Preserve source/version, original-object integrity, lawful access, extraction method, responsible custodian and processing history for any later authorised evidence export; legal reviewers determine the applicable certificate/procedure. Do not label the platform's receipt a court-admissibility certificate. The original IT Act landing page returned no substantive text and alternate official PDF retrieval timed out; complete current sections 4/5/43A/72A re-verification remains open under historical SUH-004.
+
 ## Decisions required before real records
 
 1. Name each organisation determining purposes/means and each processor; approve contracts, sub-processors, breach roles and permitted data locations.

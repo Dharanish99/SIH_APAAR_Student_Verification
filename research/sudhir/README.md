@@ -5,8 +5,10 @@
 
 **Owner:** Sudhir
 **Review partner:** Sudhan
-**Current status:** AI desk research ready for human review (round 2026-10-26; rechecked 2026-10-27)
+**Current status:** member research plus AI reconciliation ready for review (round 2026-10-26; rechecked 2026-10-27)
 **Mission:** Define trustworthy access and credential verification with appropriate data protection.
+
+Sudhir's substantive [26 October submission](original-2026-10-26/findings.md), with self-disclosed AI assistance, was recovered after the initial template baseline. Its original four files remain preserved. Read the [contribution review](human-contribution-review.md) for attribution, retained ideas, corrections and source mapping; the current AI supplements are not human-approved findings.
 
 ## Questions to answer
 1. What can each institutional operator/approver, regulator, student, employer and administrator do?

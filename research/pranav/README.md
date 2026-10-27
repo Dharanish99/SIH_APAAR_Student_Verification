@@ -62,3 +62,7 @@ Open primary sources, record evidence and uncertainty, and explain the concept t
 Update my findings, sources and progress only with work actually performed.
 Do not invent research, external access, measurements or human review.
 ```
+
+## Incoming Pranav contribution reconciled
+
+The final remote refresh found Pranav's October26 findings,16 preliminary rules,15 fictional scenarios and four source starting points. Their [original files](original-2026-10-26/findings.md) are preserved; the [contribution review](human-contribution-review.md) maps all original rules/cases and identifies qualifications. The current14-rule/22-case package is an AI supplement, not a claim that the newer human-owned work was absent. Human approval and production applicability remain pending.

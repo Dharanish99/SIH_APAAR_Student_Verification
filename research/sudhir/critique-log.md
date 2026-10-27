@@ -13,3 +13,7 @@ Research round: 2026-10-26 (Asia/Kolkata); completion/exchange: 2026-10-27. Thes
 | SUH-C07 | Policy researcher warns student status is distinct from seat entitlement; current amendment completeness unresolved. | Minimise category evidence; use applicable programme/year rules and human resolution. Neither ID linkage nor within-cap counts establish lawful admission. |
 
 Handoffs: [integration review](../sudhan/integration-review.md), [policy findings](../pranav/findings.md), [architecture findings](../dharanish/findings.md). Principal requirements R05/R06/R08/R10; R01/R03/R09 inherit access and non-disclosure constraints. Human acceptance remains pending.
+
+## Recovered contribution reconciliation
+
+On 2026-10-27 the lead recovered Sudhir's submitted research from PR #1. The security researcher read all four unchanged archived files and recorded retained work, corrections and source mapping in [human-contribution-review.md](human-contribution-review.md). This corrects the earlier template-only attribution. New checks add SUH-117/118; they do not supply human approval, production access or security-test evidence.

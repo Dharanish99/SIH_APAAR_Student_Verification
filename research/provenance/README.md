@@ -18,3 +18,9 @@ These snapshots preserve the user's research context. Historical embedded instru
 The team registration page was excluded as irrelevant to solution research. No real student records or credentials were imported. Stable Notion attachment references are retained; expiring signed download URLs are not stored. Original attachment bytes and checksums are documented by the research reproduction.
 
 Some source snapshots include old statuses, costs, generated sample identifiers or historical claim errors. Current member findings and correction ledgers control the synthesis. Source snapshots are preserved for attribution, not silently upgraded to verified evidence.
+
+## Human contributions found at the final remote refresh
+
+The initial repository baseline was 5ee5d57. A final fetch found origin/main at0d12323, including Sudhir's merged PR#1 (249a4d3, merge3efafe1) and Pranav's three commits5aaa9a8, f938d15 and0d12323. Seven incoming files are archived without byte changes under [Pranav](../pranav/original-2026-10-26/) and [Sudhir](../sudhir/original-2026-10-26/). Their folder-level provenance notes are new explanatory metadata. Specialist reconciliation documents distinguish retained contributions, corrections and outstanding verification.
+
+`.gitattributes` disables line-ending conversion for archived sources so the [manifest](preserved-files.json) hashes survive Git checkouts. Git source authorship and file integrity do not establish the correctness of a research claim.

@@ -13,3 +13,7 @@ The [14-rule catalogue](rule-catalogue.md), [22 fictional worked cases](worked-c
 **Evidence boundary:** UGC and DTE passages were reopened on official hosts. The AICTE base handbook was inspected through a PVPIT mirror; GJUST's AICTE-issued corrigendum was inspected on the recipient university's site. Pune's cited PDF now returns 404. Current AICTE amendment completeness and a pilot institution's exact policy pack remain unknown. No historical percentage is activated for production.
 
 **Handoff:** Dharanish receives rules and cases; Sudhan receives limits on linkage and duplicate interpretations; Sudhir receives minimum-disclosure and authority distinctions; Gopika should test explanation/correction usability; Kanishkar coordinates scope selection and genuine policy review. Current dependencies do not prevent the remaining design research.
+
+## Incoming Pranav contribution reconciled
+
+The final remote refresh found Pranav's October26 findings,16 preliminary rules,15 fictional scenarios and four source starting points. Their [original files](original-2026-10-26/findings.md) are preserved; the [contribution review](human-contribution-review.md) maps all original rules/cases and identifies qualifications. The current14-rule/22-case package is an AI supplement, not a claim that the newer human-owned work was absent. Human approval and production applicability remain pending.

@@ -1,20 +1,21 @@
 # Research findings - Sudhir
 
-**Workstream:** privacy, security, consent and credential verification. **Status:** AI desk research ready for human review. **Research round:** 2026-10-26 (Asia/Kolkata). **Completion recheck:** 2026-10-27. **Human reviewer/date:** pending.
+**Workstream:** privacy, security, consent and credential verification. **Status:** member contribution and AI reconciliation ready for human review. **Research round:** 2026-10-26 (Asia/Kolkata). **Completion recheck:** 2026-10-27. **Human reviewer/date:** pending.
 
 The research recommends institution-attested, versioned records with separate provider evidence and narrowly authorised disclosure. Knowing an APAAR ID must not reveal student data or existence. The service must support correction without labelling every overlap or provider failure as fraud.
 
-This is AI-authored assistance; it does not claim that Sudhir performed or approved it. [Original 2026-10-23 templates](original-2026-10-23/findings.md) are preserved. Their unfinished prompts are historical, not current conclusions.
+Sudhir submitted substantive research on 2026-10-26, with AI assistance disclosed in his findings; it was recovered during the pre-publication fetch after the initial template baseline. His [submitted findings](original-2026-10-26/findings.md), [README](original-2026-10-26/README.md), [progress](original-2026-10-26/progress.md) and [four-source ledger](original-2026-10-26/sources.csv) are preserved unchanged. The [human-contribution review](human-contribution-review.md) maps retained ideas, corrections and source IDs. The current consolidation includes subsequent AI-authored checks/design and does not imply Sudhir approved those additions. [23 October templates](original-2026-10-23/findings.md) are a separate earlier baseline, not the full extent of his contribution.
 
 ## Research outputs
 
 | Output | Coverage / evidence boundary |
 |---|---|
+| [Contribution reconciliation](human-contribution-review.md) | Credits Sudhir's recovered research and records retained ideas, qualified claims and source mapping. |
 | [Research supplement](ai-research-2026-10-26.md) | Findings, alternatives and seven fictional walkthroughs; no executed system tests. |
 | [Permission and data design](privacy-design.md) | Roles, tenant boundaries, field inventory, sharing journey, issuer/status lifecycle and pilot gates. Controls proposed. |
 | [Legal status](legal-status.md) | Primary staged commencement/corrections and CERT-In directions; deployment applicability and full SPDI verification remain open. |
 | [Threat model](threat-model.md) | Thirteen abuse cases, future checks, owners and residual risks. No penetration test or implementation. |
-| [Source register](sources.csv) | SUH-101 through SUH-116, with primary URLs, inspected sections, access dates and retrieval limits. |
+| [Source register](sources.csv) | Historical SUH-001 through SUH-004 plus AI SUH-101 through SUH-118; 22 entries with attribution, inspected sections and retrieval limits. |
 | [AI critique](critique-log.md) | Integration/policy critique and security handoffs; human review pending. |
 
 ## Supported conclusions and design consequences
@@ -37,4 +38,4 @@ This is AI-authored assistance; it does not claim that Sudhir performed or appro
 | Student grievance owner, response rules and appeal route | Institution/regulator + Gopika/Pranav | Disputed evidence stays explainable and reviewable. |
 | Negative access, revocation, upload, recovery and abuse checks | Future implementation/security team | Proposed checks are not passed tests. |
 
-Human review and seven-minute teach-back remain pending. Handoffs to Sudhan, Pranav, Dharanish and the lead support synthesis and critique, not acceptance on their behalf.
+Peer review of the consolidated findings and seven-minute teach-back remain pending. The historical contribution's self-reported 50% milestone is not an independently measured completion score. Handoffs to Sudhan, Pranav, Dharanish and the lead support synthesis and critique, not acceptance on their behalf.

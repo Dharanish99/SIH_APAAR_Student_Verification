@@ -23,7 +23,7 @@ Research and solution design for the supplied SIH26263 brief. Consolidated on **
 | Sudhir | [Security, privacy, legal status and trust](research/sudhir/findings.md) |
 | Kanishkar B, human team lead | [Consolidation and feasibility](research/kanishkar/findings.md) |
 
-Each workstream has a source ledger and progress log. [Provenance](research/provenance/README.md) preserves original Notion context and attachment hashes. AI supplements are identified; no human reviewer or interview is invented. Sudhan and Sudhir are distinct contributors.
+Each workstream has a source ledger and progress log. [Provenance](research/provenance/README.md) preserves original Notion context and attachment hashes. AI supplements are identified; no human reviewer or interview is invented. Sudhan and Sudhir are distinct contributors. A final remote refresh also incorporated Pranav and Sudhir's newer October26 commits; their original files and specialist reconciliation are retained.
 
 ## Evidence boundary
 

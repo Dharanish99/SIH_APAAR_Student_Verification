@@ -1,14 +1,14 @@
 {
   "scope": "Documentation structure and preserved-file integrity only; no application or live-provider testing",
   "counts": {
-    "csv_files": 14,
-    "csv_rows": 2446,
+    "csv_files": 16,
+    "csv_rows": 2465,
     "json_files": 5,
-    "markdown_links": 323,
-    "markdown_anchors": 20,
-    "source_records": 97,
-    "source_ids": 97,
-    "preserved_files": 26
+    "markdown_links": 370,
+    "markdown_anchors": 25,
+    "source_records": 108,
+    "source_ids": 108,
+    "preserved_files": 35
   },
   "errors": [],
   "passed": true

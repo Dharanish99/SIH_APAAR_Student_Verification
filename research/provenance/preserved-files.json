@@ -1,6 +1,6 @@
 {
   "created_on": "2026-10-27",
-  "meaning": "Integrity of stored snapshots and original attachments; hashes do not verify their claims or authorship.",
+  "meaning": "Integrity of stored source snapshots, original attachments and archive provenance notes. Hashes do not verify their claims or authorship.",
   "files": [
     {
       "path": "research/gopika/original-upload/findings.md",
@@ -131,6 +131,51 @@
       "path": "research/provenance/notion/team-hub.md",
       "bytes": 10318,
       "sha256": "08f0df54e03bb03a401f18c0599d813d24a67abfb78da6f8e45562a5fc1b0668"
+    },
+    {
+      "path": "research/pranav/original-2026-10-26/findings.md",
+      "bytes": 25856,
+      "sha256": "b3a7232b71e962130a15029620ab65d215f5409c8754d5dfb9a7f95da81ac350"
+    },
+    {
+      "path": "research/pranav/original-2026-10-26/progress.md",
+      "bytes": 1078,
+      "sha256": "e7ce79aaa3b66ff2c24ac06ec4398a77483a3fb77d1c0cba016c82cc5754c71f"
+    },
+    {
+      "path": "research/pranav/original-2026-10-26/PROVENANCE.md",
+      "bytes": 391,
+      "sha256": "9398c38de7d7d17d0d548c2e4a609ffe4bd5c6aecfe7ddd09b2fa856354e16cd"
+    },
+    {
+      "path": "research/pranav/original-2026-10-26/sources.csv",
+      "bytes": 3094,
+      "sha256": "4981d198b1ce7cdea58337ba575f31de9dbf4ba2f0789f061245d89129994a09"
+    },
+    {
+      "path": "research/sudhir/original-2026-10-26/findings.md",
+      "bytes": 23116,
+      "sha256": "b503f528c92516509fbbac898a01a19b97bf1b1b7cecea276a061d4778c1a45a"
+    },
+    {
+      "path": "research/sudhir/original-2026-10-26/progress.md",
+      "bytes": 3066,
+      "sha256": "d2a00875dbea9b5f53e4fcf3358a1c2dad16c087e288eb21a931fd018354aceb"
+    },
+    {
+      "path": "research/sudhir/original-2026-10-26/PROVENANCE.md",
+      "bytes": 391,
+      "sha256": "9398c38de7d7d17d0d548c2e4a609ffe4bd5c6aecfe7ddd09b2fa856354e16cd"
+    },
+    {
+      "path": "research/sudhir/original-2026-10-26/README.md",
+      "bytes": 4399,
+      "sha256": "f48c42217c9012109e1900177a51082caf4b3e5d533fae1d5905226116715aad"
+    },
+    {
+      "path": "research/sudhir/original-2026-10-26/sources.csv",
+      "bytes": 2356,
+      "sha256": "38beb029c1a131303884ad11a37ac8d291e0dabd17056013938c9d820a8f1ba6"
     }
   ]
 }

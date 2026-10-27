@@ -183,3 +183,5 @@ Measure total operator, approver and student effort; correction completion; expl
 **Stage D — controlled expansion.** Recheck policy/legal commencement, complete independent security assessment, test restore and key-compromise procedures, and obtain genuine institutional acceptance. Expand one integration or cohort at a time. Stop affected processing on unauthorised disclosure, wrong-person linkage, failed revocation, silent overwrite, unreviewable policy, or irreversible wrongful rejection. Contain the event, preserve restricted evidence, use the manual route and reopen only after documented human review.
 
 SetuTrace is defensible when it helps people correct and explain records without overstating what identity evidence proves. The current deliverable is the research-backed design and its testable assumptions. [Actual AI critique and resolutions](design-critique.md) remain separate from the human decisions still required.
+
+**Lead publication update:** The final remote refresh incorporated newer Pranav and Sudhir contributions, preserved alongside their specialist reconciliations in the [assignment audit](research-audit.md).

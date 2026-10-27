@@ -7,10 +7,10 @@ This is a research and artifact validation record. It does not certify an implem
 | Check | Observed outcome | Boundary |
 |---|---|---|
 | Original Dharanish model reproduction | Eight comparisons matched; twelve sequential model checks reproduced; 1,000 fictional rows and separate 300-observation reference | Not a database, concurrent-worker, provider or field test |
-| Source preservation | 26 stored originals/snapshots have recorded SHA-256 hashes; original upload bytes were compared during import | Hashes establish file integrity, not truth or authorship |
+| Source preservation | 35 preserved source/snapshot and provenance files have recorded SHA-256 hashes; original upload bytes were compared during import | Hashes establish file integrity, not truth or authorship |
 | Policy reasoning package | 14 proposed rules and 22 numbered fictional cases, with source/applicability limits | Expected outcomes, not an executed rule engine |
-| Integration package | 15 source records and 12 explicit future contract scenarios; provider PDF hashes checked | No API call or credentials; scenarios unexecuted |
-| Security package | 16 source records, 13 abuse cases and substantive agent critiques | Proposed controls, no penetration test or human approval |
+| Integration package | 15 integration source records and 12 explicit future contract scenarios; provider PDF hashes checked | No API call or credentials; scenarios unexecuted |
+| Security package | 22 source records, 13 abuse cases and substantive agent critiques | Proposed controls, no penetration test or human approval |
 | Documentation | CSV widths, source-ID references, JSON parsing, local link targets and cross-file heading anchors checked | Historical source snapshots and example IDs are not treated as current claims; remote URLs are checked during research, not claimed permanently available |
 | Report PDF | Ten pages rendered; every page visually inspected; final contents-page change separately re-rendered and inspected | PDF is not tagged for accessibility; Markdown remains available |
 | Mind map | 12 branches, 82 leaves; local SVG/PNG inspected; 95 editable canvas nodes and 94 connectors | Initial overlapping layout corrected; final node-bounds check found zero overlapping node pairs |
@@ -38,3 +38,5 @@ The proposal is research-grounded, **not real-world validated**. Proposed 90% ta
 ## Publication
 
 Research is published on `codex/research-synthesis-2026-10-26`; the repository default branch is not merged by this research task. Remote publication is verified independently after the commit and push. The PR records the committed package and review state.
+
+Final remote update: newer Pranav/Sudhir contributions were imported and reconciled; all original rules/cases and both revised ledgers were checked. The research branch includes origin/main history through0d12323. Source snapshots remain byte-identical under archive-specific Git attributes.

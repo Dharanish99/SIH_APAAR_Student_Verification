@@ -27,3 +27,7 @@ Do not claim live APAAR verification, official AICTE approval, national fraud de
 Operator → Reports & audit → Run integrity check. Show tenant-scoped counts and the checked event count. Open Submission snapshots and download the minimal CSV; it omits APAAR and marks approval status. In the verifier persona, select Meridian Careers to show that another recipient sees no Northstar permission.
 
 If an import changes the source after approval, the old snapshot remains available as superseded historical evidence; a fresh approval is required for new sharing.
+
+## Show correction propagation (optional)
+
+First approve a snapshot and create a student permission before correcting Meera. Then submit and accept the correction. Recheck the earlier permission: it is superseded and returns no student fields. The overview shows the previous snapshot as superseded. Approve the current set and create a fresh permission to show the corrected ECE value.

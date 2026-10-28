@@ -21,6 +21,8 @@ export function installHttp(
   app: Express,
   options: {
     allowedOrigins?: string[];
+    allowedHosts?: string[];
+    hosted?: boolean;
     requestLimit?: number;
     sessionLimit?: number;
   } = {},
@@ -34,7 +36,7 @@ export function installHttp(
   });
   app.use(
     helmet({
-      strictTransportSecurity: false,
+      strictTransportSecurity: options.hosted ? { maxAge: 31536000 } : false,
       referrerPolicy: { policy: "no-referrer" },
       contentSecurityPolicy: {
         directives: {
@@ -61,11 +63,15 @@ export function installHttp(
   );
   const localOnly: RequestHandler = (req, res, next) => {
     res.set("Cache-Control", "no-store");
-    if (!["127.0.0.1", "localhost", "[::1]", "::1"].includes(req.hostname))
+    if (
+      !(
+        options.allowedHosts ?? ["127.0.0.1", "localhost", "[::1]", "::1"]
+      ).includes(req.hostname)
+    )
       return next(
         new HttpError(
           403,
-          "The demo only accepts a loopback host.",
+          "This host is not configured for the demo.",
           "HOST_DENIED",
         ),
       );
@@ -73,7 +79,7 @@ export function installHttp(
       return next(
         new HttpError(
           403,
-          "This demonstration accepts local requests only.",
+          "This browser origin is not configured for the demo.",
           "ORIGIN_DENIED",
         ),
       );

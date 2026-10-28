@@ -3937,3 +3937,20 @@ details > summary:hover {
     grid-template-columns: 1fr;
   }
 }
+
+.lifecycle-strip {
+  margin: 24px 0;
+}
+.lifecycle-nodes {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.lifecycle-nodes b {
+  background: var(--surface, #f1f5ee);
+  padding: 10px;
+  border-radius: 8px;
+}

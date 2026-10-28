@@ -1,3 +1,7 @@
+# Current regression update
+
+The local suite now contains 23 tests, including stale approval, correction renewal, hosted access control and a local HTTP proxy round trip. Hosted platform deployment remains unverified until exercised on actual Vercel and Render services. The earlier record below is retained as a dated baseline.
+
 # Executed validation — submission prototype
 
 28 October 2026, Asia/Kolkata. Scope: real local HTTP routes, SQLite state and a synthetic browser workflow. No real student records or government services were used.

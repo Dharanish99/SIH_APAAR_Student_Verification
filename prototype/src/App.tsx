@@ -94,6 +94,8 @@ type Case = {
   status: string;
   reason: string;
   resolution?: string;
+  expectedVersion: number;
+  outcome?: string;
   created: string;
   resolvedAt?: string;
 };
@@ -119,6 +121,7 @@ type Grant = {
 };
 
 type State = {
+  reviewDigest?: string;
   session: Session;
   institutions: { id: string; name: string; short: string; city: string }[];
   programmes: { id: string; name: string; capacity: number }[];
@@ -372,6 +375,9 @@ function App() {
     [receipt, setReceipt] = useState<Receipt | null>(null),
     [verificationError, setVerificationError] = useState("");
 
+  const [accessGate, setAccessGate] = useState(false);
+  const [accessCode, setAccessCode] = useState("");
+  const [accessError, setAccessError] = useState("");
   const [report, setReport] = useState<Report | null>(null);
   const [reportError, setReportError] = useState("");
   const [resetOpen, setResetOpen] = useState(false);
@@ -395,7 +401,10 @@ function App() {
     });
     const value = await response.json();
     if (!response.ok)
-      throw new Error(value.error || "The request could not be completed.");
+      throw Object.assign(
+        new Error(value.error || "The request could not be completed."),
+        { status: response.status, code: value.code },
+      );
     return value;
   }
 
@@ -453,11 +462,19 @@ function App() {
       await refresh();
       if (message) notify(message);
     } catch (e) {
+      if ((e as { status?: number }).status === 409) {
+        setAcknowledged(false);
+        await refresh().catch(() => undefined);
+      }
       notify((e as Error).message, true);
     } finally {
       setBusy(false);
     }
   }
+
+  useEffect(() => {
+    setAcknowledged(false);
+  }, [data?.reviewDigest]);
 
   useEffect(() => {
     if (
@@ -496,6 +513,13 @@ function App() {
         try {
           s = await api<{ session: Session }>("/session");
         } catch {
+          const capabilities = await api<{ accessCodeRequired: boolean }>(
+            "/capabilities",
+          );
+          if (capabilities.accessCodeRequired) {
+            if (active) setAccessGate(true);
+            return;
+          }
           s = await api<{ session: Session }>("/demo/session", {
             role: "operator",
             tenant: "aster",
@@ -612,11 +636,16 @@ function App() {
     e.preventDefault();
     void run(
       () =>
-        api("/cases", {
-          programme: correctionTo,
-          reason: correctionReason,
-          expectedVersion: data!.records[0].version,
-        }),
+        api(
+          cases[0]?.status === "open"
+            ? `/cases/${cases[0].id}/reopen`
+            : "/cases",
+          {
+            programme: correctionTo,
+            reason: correctionReason,
+            expectedVersion: data!.records[0].version,
+          },
+        ),
       "Correction requested. The original institution claim is preserved.",
     );
   };
@@ -635,7 +664,10 @@ function App() {
   const approve = (e: FormEvent) => {
     e.preventDefault();
     void run(async () => {
-      await api("/snapshots", { note: approvalNote });
+      await api("/snapshots", {
+        note: approvalNote,
+        reviewDigest: data?.reviewDigest,
+      });
       setAcknowledged(false);
     }, "Exact row versions frozen in a locally approved snapshot.");
   };
@@ -711,6 +743,60 @@ function App() {
     await switchRole(steps[index].role, "aster");
     setView(steps[index].view);
   }
+
+  if (accessGate)
+    return (
+      <main className="startup">
+        <ShieldCheck size={44} />
+        <h1>SetuTrace judge workspace</h1>
+        <p>
+          Explore how a student's correction changes reporting and later
+          verification. All records and identities are fictional.
+        </p>
+        <form
+          className="panel"
+          onSubmit={async (event) => {
+            event.preventDefault();
+            setBusy(true);
+            setAccessError("");
+            try {
+              const result = await api<{ session: Session }>("/demo/session", {
+                role: "operator",
+                tenant: "aster",
+                accessCode,
+              });
+              csrf.current = result.session.csrf;
+              await refresh();
+              setAccessGate(false);
+              setAccessCode("");
+            } catch (error) {
+              setAccessError((error as Error).message);
+            } finally {
+              setBusy(false);
+            }
+          }}
+        >
+          <label className="field-label">
+            Judge access code
+            <input
+              type="password"
+              autoComplete="off"
+              required
+              value={accessCode}
+              onChange={(event) => setAccessCode(event.target.value)}
+            />
+          </label>
+          <button className="button primary" disabled={busy}>
+            Enter demo <ArrowRight size={16} />
+          </button>
+          {accessError && <p role="alert">{accessError}</p>}
+        </form>
+        <p className="small muted">
+          The owner shares this code privately. The hosted demo uses a shared
+          fictional dataset; reset affects other viewers.
+        </p>
+      </main>
+    );
 
   if (fatal)
     return (
@@ -1027,6 +1113,50 @@ function App() {
                 </div>
               </section>
 
+              <section
+                className="panel lifecycle-strip"
+                aria-label="Correction propagation"
+              >
+                <span className="overline">
+                  ONE CORRECTION. EVERY DEPENDENT OUTPUT.
+                </span>
+                <p>
+                  A source correction changes the count, supersedes earlier
+                  approval and makes older verification unavailable until a
+                  fresh approval and permission.
+                </p>
+                <div className="lifecycle-nodes">
+                  <b>
+                    Source: {meera?.programme ?? "—"} · v{meera?.version ?? "—"}
+                  </b>
+                  <ArrowRight size={16} />
+                  <b>
+                    CSE:{" "}
+                    {
+                      records.filter(
+                        (r) => r.programme === "CSE" && r.status === "Active",
+                      ).length
+                    }
+                    /6
+                  </b>
+                  <ArrowRight size={16} />
+                  <b>
+                    {snapshots.filter((s) => s.status === "superseded").length}{" "}
+                    superseded snapshots
+                  </b>
+                  <ArrowRight size={16} />
+                  <b>
+                    {currentSnapshot
+                      ? "Current approval available"
+                      : "Fresh approval required"}
+                  </b>
+                </div>
+                <p className="small muted">
+                  Meera's letter mismatch is a seeded scenario. The prototype
+                  demonstrates its correction workflow; it does not
+                  automatically read admission documents.
+                </p>
+              </section>
               <div className="stats-grid">
                 <Stat
                   icon={UsersRound}
@@ -1819,7 +1949,7 @@ function App() {
                         >
                           {latestCase.status === "open"
                             ? "Under institution review"
-                            : latestCase.status}
+                            : latestCase.outcome || latestCase.status}
                         </Pill>
                         <p>
                           <b>
@@ -1833,45 +1963,70 @@ function App() {
                         </small>
                       </div>
                     )}
-                    {latestCase?.status !== "open" &&
-                      latestCase?.status !== "resolved" && (
-                        <form onSubmit={makeCorrection}>
-                          <p className="muted">
-                            In this fictional scenario, your admission letter
-                            says ECE. Request a correction; the institution owns
-                            its source record.
+                    {(latestCase?.status !== "open" ||
+                      latestCase.expectedVersion !== records[0].version) && (
+                      <form onSubmit={makeCorrection}>
+                        {latestCase?.status === "open" && (
+                          <div className="notice warning">
+                            The source changed after this request. Renew it
+                            against version {records[0].version}; the earlier
+                            request stays in history.
+                          </div>
+                        )}
+                        <p className="muted">
+                          In this fictional scenario, your admission letter says
+                          ECE. Request a correction; the institution owns its
+                          source record.
+                        </p>
+                        <label className="field-label">
+                          Programme on your source letter
+                          <select
+                            value={correctionTo}
+                            onChange={(e) => setCorrectionTo(e.target.value)}
+                          >
+                            <option value="ECE">
+                              ECE · Electronics & Communication
+                            </option>
+                            <option value="CSE">
+                              CSE · Computer Science & Engineering
+                            </option>
+                          </select>
+                        </label>
+                        <label className="field-label">
+                          Explain the mismatch
+                          <textarea
+                            value={correctionReason}
+                            onChange={(e) =>
+                              setCorrectionReason(e.target.value)
+                            }
+                            required
+                            minLength={12}
+                          />
+                        </label>
+                        <button className="button primary" disabled={busy}>
+                          {latestCase?.status === "open"
+                            ? "Renew correction request"
+                            : "Request programme correction"}{" "}
+                          <ArrowRight size={16} />
+                        </button>
+                      </form>
+                    )}
+                    {cases.length > 1 && (
+                      <details>
+                        <summary>
+                          Earlier correction requests ({cases.length - 1})
+                        </summary>
+                        {cases.slice(1).map((c) => (
+                          <p className="small" key={c.id}>
+                            <b>
+                              {c.from} → {c.to} · {c.outcome || c.status}
+                            </b>
+                            <br />
+                            {c.resolution || c.reason}
                           </p>
-                          <label className="field-label">
-                            Programme on your source letter
-                            <select
-                              value={correctionTo}
-                              onChange={(e) => setCorrectionTo(e.target.value)}
-                            >
-                              <option value="ECE">
-                                ECE · Electronics & Communication
-                              </option>
-                              <option value="CSE">
-                                CSE · Computer Science & Engineering
-                              </option>
-                            </select>
-                          </label>
-                          <label className="field-label">
-                            Explain the mismatch
-                            <textarea
-                              value={correctionReason}
-                              onChange={(e) =>
-                                setCorrectionReason(e.target.value)
-                              }
-                              required
-                              minLength={12}
-                            />
-                          </label>
-                          <button className="button primary" disabled={busy}>
-                            Request programme correction{" "}
-                            <ArrowRight size={16} />
-                          </button>
-                        </form>
-                      )}
+                        ))}
+                      </details>
+                    )}
                     {latestCase?.status === "open" && (
                       <p className="muted small">
                         Your original claim remains visible. The institution
@@ -2711,7 +2866,7 @@ function App() {
                 </div>
                 <a
                   className="button secondary"
-                  href="https://github.com/Dharanish99/SIH_APAAR_Student_Verification/blob/codex/research-synthesis-2026-10-26/docs/solution-report.md"
+                  href="https://github.com/Dharanish99/SIH_APAAR_Student_Verification/blob/main/docs/solution-report.md"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -2995,6 +3150,9 @@ function App() {
           </div>
           <h3>{steps[guide].title}</h3>
           <p>{steps[guide].text}</p>
+          <small className="muted">
+            Complete this action before Next. Step dots allow free exploration.
+          </small>
           <div className="guide-actions">
             <span>
               {steps.map((_, i) => (
@@ -3009,7 +3167,14 @@ function App() {
             {guide < steps.length - 1 ? (
               <button
                 className="text-button"
-                disabled={busy}
+                disabled={
+                  busy ||
+                  (guide === 1 && !cases.length) ||
+                  (guide === 2 && !!meera?.programmeReview) ||
+                  (guide === 3 && !currentSnapshot) ||
+                  (guide === 4 &&
+                    !data.grants.some((g) => g.status === "active"))
+                }
                 onClick={() => void guideTo(guide + 1)}
               >
                 Next step <ArrowRight size={15} />

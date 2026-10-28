@@ -1,5 +1,5 @@
 import express, { type Response } from "express";
-import { randomUUID, createHash } from "node:crypto";
+import { randomUUID, createHash, timingSafeEqual } from "node:crypto";
 import path from "node:path";
 import { z } from "zod";
 import type { StudentRecord, ImportPreview } from "../shared/contracts.ts";
@@ -70,6 +70,7 @@ const nameMap = [
 const personaSchema = z.object({
   role: z.enum(["operator", "approver", "student", "regulator", "verifier"]),
   tenant: z.enum(["aster", "river"]).default("aster"),
+  accessCode: z.string().max(200).optional(),
   recipient: z
     .enum(["Northstar Skills", "Meridian Careers"])
     .default("Northstar Skills"),
@@ -87,10 +88,23 @@ export function createApplication(
     keyPath?: string;
     demoMode?: boolean;
     allowedOrigins?: string[];
+    allowedHosts?: string[];
+    hosted?: boolean;
+    accessCode?: string;
     requestLimit?: number;
     sessionLimit?: number;
   } = {},
 ) {
+  if (
+    options.hosted &&
+    (!options.accessCode ||
+      options.accessCode.length < 16 ||
+      !options.allowedHosts?.length ||
+      !options.allowedOrigins?.length)
+  )
+    throw new Error(
+      "Hosted demos require access code, allowed hosts and allowed origins.",
+    );
   const now = options.now ?? Date.now;
   const dbPath = options.dbPath ?? path.resolve("data/setutrace.sqlite");
   const db = openDatabase(dbPath);
@@ -292,6 +306,15 @@ export function createApplication(
     }
     return result;
   };
+  const reviewDigest = (tenant: string) =>
+    hash(
+      json({
+        rows: records(tenant),
+        findings: issues(tenant),
+        cases: cases(tenant),
+        rulePack: "DEMO-2026.1",
+      }),
+    );
   const snapshots = (tenant: string): Record<string, unknown>[] =>
     db
       .prepare("SELECT * FROM snapshots WHERE tenant=? ORDER BY rowid DESC")
@@ -335,16 +358,17 @@ export function createApplication(
   app.get("/api/health", (_req, res) =>
     res.json({
       status: "ok",
-      mode: "synthetic-local",
+      mode: options.hosted ? "synthetic-hosted" : "synthetic-local",
       database: "SQLite",
       schemaVersion: SCHEMA_VERSION,
-      version: "0.2.0",
+      version: "0.3.0",
     }),
   );
   app.get("/api/capabilities", (_req, res) =>
     res.json({
       mode: options.demoMode === false ? "locked" : "demo",
-      apiVersion: "0.2.0",
+      apiVersion: "0.3.0",
+      accessCodeRequired: !!options.accessCode,
       csv: { maxRows: LIMITS.rows, maxBytes: LIMITS.csvBytes },
       sessionMinutes: LIMITS.sessionTtlMs / 60000,
       provider: "synthetic fixtures",
@@ -361,6 +385,33 @@ export function createApplication(
       );
     const p = personaSchema.parse(req.body),
       token = randomUUID();
+    const priorToken = req.headers.cookie
+      ?.split(";")
+      .map((v) => v.trim())
+      .find((v) => v.startsWith("setutrace_demo="))
+      ?.split("=")[1];
+    const prior = priorToken
+      ? db
+          .prepare("SELECT expires FROM sessions WHERE token_hash=?")
+          .get(hash(priorToken))
+      : undefined;
+    if (
+      options.accessCode &&
+      !(prior && Number(prior.expires) > now()) &&
+      !timingSafeEqual(
+        Buffer.from(hash(p.accessCode ?? "")),
+        Buffer.from(hash(options.accessCode)),
+      )
+    )
+      throw new Fault(
+        403,
+        "Enter the judge access code supplied by the demo owner.",
+        "DEMO_ACCESS_REQUIRED",
+      );
+    if (priorToken)
+      db.prepare("DELETE FROM sessions WHERE token_hash=?").run(
+        hash(priorToken),
+      );
     db.prepare("DELETE FROM sessions WHERE expires<=?").run(now());
     if (
       Number(db.prepare("SELECT COUNT(*) n FROM sessions").get()?.n ?? 0) >=
@@ -386,6 +437,7 @@ export function createApplication(
     );
     res.cookie("setutrace_demo", token, {
       httpOnly: true,
+      secure: !!options.hosted,
       sameSite: "strict",
       maxAge: LIMITS.sessionTtlMs,
       path: "/",
@@ -501,6 +553,7 @@ export function createApplication(
       });
     return res.json({
       ...base,
+      reviewDigest: reviewDigest(s.tenant),
       records: records(s.tenant),
       issues: issues(s.tenant),
       cases: cases(s.tenant),
@@ -668,6 +721,73 @@ export function createApplication(
     });
     res.status(201).json({ id });
   });
+  app.post("/api/cases/:id/reopen", (req, res) => {
+    const sessionValue = allow(res, "student");
+    const input = correctionSchema.parse(req.body);
+    const id = transaction(() => {
+      const item = db
+        .prepare("SELECT * FROM cases WHERE id=? AND tenant=? AND record_id=?")
+        .get(
+          String(req.params.id),
+          sessionValue.tenant,
+          sessionValue.studentId,
+        );
+      if (!item || item.status !== "open")
+        throw new Fault(
+          409,
+          "This request is no longer open. Refresh its history.",
+        );
+      const previous = decode<Record<string, unknown>>(item.data);
+      const record = getRecord(sessionValue.studentId, sessionValue.tenant);
+      if (record.version !== input.expectedVersion)
+        throw new Fault(
+          409,
+          "The source changed again. Refresh before renewing the request.",
+        );
+      if (previous.expectedVersion === record.version)
+        throw new Fault(
+          409,
+          "This request already covers the current source revision.",
+        );
+      const nextId = randomUUID();
+      db.prepare("UPDATE cases SET status='declined',data=? WHERE id=?").run(
+        json({
+          ...previous,
+          outcome: "superseded",
+          supersededBy: nextId,
+          resolution:
+            "Source changed; replaced by a new request against the current revision.",
+          resolvedAt: stamp(),
+        }),
+        item.id,
+      );
+      db.prepare("INSERT INTO cases VALUES(?,?,?,?,?)").run(
+        nextId,
+        sessionValue.tenant,
+        record.id,
+        "open",
+        json({
+          recordId: record.id,
+          studentName: record.name,
+          field: "programme",
+          from: record.programme,
+          to: input.programme,
+          reason: input.reason,
+          expectedVersion: record.version,
+          previousCaseId: item.id,
+          created: stamp(),
+        }),
+      );
+      audit(
+        sessionValue.tenant,
+        "Student",
+        "Correction renewed",
+        "Outdated request retained and linked to a new request against the current source revision.",
+      );
+      return nextId;
+    });
+    res.status(201).json({ id });
+  });
   app.post("/api/cases/:id/resolve", (req, res) => {
     const s = allow(res, "operator");
     const { reason, decision } = z
@@ -688,7 +808,7 @@ export function createApplication(
     }>(item.data);
     transaction(() => {
       const r = getRecord(c.recordId, s.tenant);
-      if (r.version !== c.expectedVersion)
+      if (decision === "accept" && r.version !== c.expectedVersion)
         throw new Fault(
           409,
           "The source record changed after this request. Reconcile the newer revision before resolving.",
@@ -761,11 +881,20 @@ export function createApplication(
   });
   app.post("/api/snapshots", (req, res) => {
     const s = allow(res, "approver");
-    const { note } = z
-      .object({ note: z.string().trim().min(12).max(1000) })
+    const { note, reviewDigest: expectedDigest } = z
+      .object({
+        note: z.string().trim().min(12).max(1000),
+        reviewDigest: z.string().regex(/^[a-f0-9]{64}$/),
+      })
       .parse(req.body);
     const id = randomUUID();
     transaction(() => {
+      if (expectedDigest !== reviewDigest(s.tenant))
+        throw new Fault(
+          409,
+          "The reviewed records or findings changed. Refresh, review the current set and acknowledge it again.",
+          "STALE_REVIEW",
+        );
       const rows = records(s.tenant);
       const findings = issues(s.tenant);
       const data = {
@@ -774,6 +903,8 @@ export function createApplication(
         issuer: "SYNTHETIC INSTITUTION",
         note,
         rulePack: "DEMO-2026.1",
+        reviewDigest: expectedDigest,
+        cases: cases(s.tenant),
         rows,
         digest: hash(json(rows)),
         count: rows.length,

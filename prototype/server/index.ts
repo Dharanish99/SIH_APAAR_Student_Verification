@@ -11,13 +11,10 @@ const runtime = createApplication({
   dbPath: path.join(config.dataDir, "setutrace.sqlite"),
   keyPath: path.join(config.dataDir, "synthetic-signing-key.pem"),
   demoMode: config.demoMode,
-  allowedOrigins: [
-    `http://127.0.0.1:${config.port}`,
-    `http://localhost:${config.port}`,
-    `http://[::1]:${config.port}`,
-    "http://127.0.0.1:5178",
-    "http://localhost:5178",
-  ],
+  allowedOrigins: config.allowedOrigins,
+  allowedHosts: config.allowedHosts,
+  hosted: config.hosted,
+  accessCode: config.accessCode,
 });
 const dist = path.resolve("dist");
 if (existsSync(dist)) {

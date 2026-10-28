@@ -28,6 +28,12 @@ async function listen(runtime: Runtime) {
     cookie,
     csrf,
     call: async (url, body) => {
+      if (url === "/snapshots" && body && !(body as any).reviewDigest) {
+        const state: any = await (
+          await fetch(base + "/api/state", { headers: { cookie } })
+        ).json();
+        body = { ...(body as object), reviewDigest: state.reviewDigest };
+      }
       const response = await fetch(base + "/api" + url, {
         method: body === undefined ? "GET" : "POST",
         headers: {
@@ -484,3 +490,122 @@ test("demo authentication can be disabled; host configuration and session creati
     { sessionLimit: 2 },
   );
 });
+
+test("approval rejects changes after review and accepts a fresh reviewed digest", () =>
+  fixture(async (h) => {
+    const op = await h.persona("operator"),
+      approver = await h.persona("approver");
+    const initial = await approver.call("/state");
+    await op.call("/records/aster:AIT-26-007/provider-fixture", {
+      response: "unavailable",
+      expectedVersion: 1,
+    });
+    const stale = await approver.call("/snapshots", {
+      note: "Reviewed the original fictional source set.",
+      reviewDigest: initial.body.reviewDigest,
+    });
+    assert.equal(stale.status, 409);
+    assert.equal(stale.body.code, "STALE_REVIEW");
+    const fresh = await approver.call("/state");
+    const approved = await approver.call("/snapshots", {
+      note: "Reviewed the updated fictional source set.",
+      reviewDigest: fresh.body.reviewDigest,
+    });
+    assert.equal(approved.status, 201);
+    const frozen = await approver.call(`/snapshots/${approved.body.id}/export`);
+    assert.equal(
+      frozen.body.rows.find((r: any) => r.studentId === "AIT-26-007").version,
+      2,
+    );
+  }));
+
+test("stale correction can be renewed without deleting case history", () =>
+  fixture(async (h) => {
+    const student = await h.persona("student"),
+      op = await h.persona("operator");
+    const old = await student.call("/cases", {
+      programme: "ECE",
+      reason: "The fictional admission letter says ECE.",
+      expectedVersion: 1,
+    });
+    await op.call("/records/aster:AIT-26-007/provider-fixture", {
+      response: "unavailable",
+      expectedVersion: 1,
+    });
+    assert.equal(
+      (
+        await op.call(`/cases/${old.body.id}/resolve`, {
+          decision: "accept",
+          reason: "Checked the fictional admission record.",
+        })
+      ).status,
+      409,
+    );
+    const renewed = await student.call(`/cases/${old.body.id}/reopen`, {
+      programme: "ECE",
+      reason: "The fictional admission letter still says ECE.",
+      expectedVersion: 2,
+    });
+    assert.equal(renewed.status, 201);
+    assert.equal(
+      (
+        await op.call(`/cases/${renewed.body.id}/resolve`, {
+          decision: "accept",
+          reason: "Checked the fictional admission record.",
+        })
+      ).status,
+      200,
+    );
+    const state = await student.call("/state");
+    assert.equal(state.body.records[0].version, 3);
+    assert.equal(state.body.cases.length, 2);
+    assert.equal(state.body.cases[1].outcome, "superseded");
+    assert.equal(
+      (
+        await student.call("/cases", {
+          programme: "CSE",
+          reason: "Another source discrepancy needs review.",
+          expectedVersion: 3,
+        })
+      ).status,
+      201,
+    );
+  }));
+
+test("hosted access code guards persona creation and allows secure role switching", () =>
+  fixture(
+    async (h) => {
+      const request = async (body: unknown, cookie?: string) =>
+        fetch(h.base + "/api/demo/session", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            ...(cookie ? { cookie } : {}),
+          },
+          body: JSON.stringify(body),
+        });
+      assert.equal(
+        (await request({ role: "operator", accessCode: "wrong" })).status,
+        403,
+      );
+      const login = await request({
+        role: "operator",
+        accessCode: "synthetic-test-code-123",
+      });
+      assert.equal(login.status, 200);
+      const cookie = login.headers.get("set-cookie")!;
+      assert.match(cookie, /HttpOnly/i);
+      assert.match(cookie, /Secure/i);
+      assert.match(cookie, /SameSite=Strict/i);
+      assert.equal(
+        (await request({ role: "student" }, cookie.split(";")[0])).status,
+        200,
+      );
+    },
+    {
+      hosted: true,
+      accessCode: "synthetic-test-code-123",
+      allowedHosts: ["127.0.0.1"],
+      allowedOrigins: ["https://demo.example"],
+    },
+  ));

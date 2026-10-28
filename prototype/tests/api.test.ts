@@ -31,6 +31,12 @@ async function persona(role: string, tenant = "aster"): Promise<Client> {
     cookie,
     csrf,
     request: async (route, body) => {
+      if (route === "/snapshots" && body && !(body as any).reviewDigest) {
+        const state: any = await (
+          await fetch(base + "/api/state", { headers: { cookie } })
+        ).json();
+        body = { ...(body as object), reviewDigest: state.reviewDigest };
+      }
       const r = await fetch(base + "/api" + route, {
         method: body === undefined ? "GET" : "POST",
         headers: {

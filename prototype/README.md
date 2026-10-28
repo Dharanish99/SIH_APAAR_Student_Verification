@@ -11,7 +11,7 @@ npm start
 npm run check
 ```
 
-Node 24.x is required. The API defaults to http://127.0.0.1:4871; development UI uses port 5178. The root `.env` is optional. `DATA_DIR` resolves from this workspace directory and defaults to `prototype/data/`. This is a local synthetic demo; non-loopback binding is refused. `DEMO_MODE=false` refuses startup until a real identity adapter exists.
+Node 24.x is required. The API defaults to http://127.0.0.1:4871; development UI uses port 5178. The root `.env` is optional. `DATA_DIR` resolves from this workspace directory and defaults to `prototype/data/`. Local mode refuses non-loopback binding. Explicit hosted mode requires an access code, exact hosts/origins and a persistent data directory; see [deployment](../docs/DEPLOYMENT.md). `DEMO_MODE=false` refuses startup until a real identity adapter exists.
 
 | Location | Responsibility |
 |---|---|
@@ -24,7 +24,7 @@ Node 24.x is required. The API defaults to http://127.0.0.1:4871; development UI
 | `server/signing.ts` | Synthetic Ed25519 issuer, key persistence and signatures |
 | `server/audit.ts` | Tenant-scoped retained event-chain verification |
 | `server/config.ts`, `server/index.ts` | Local configuration, static bundle and lifecycle |
-| `tests/` | Nineteen HTTP/database behavioral tests |
+| `tests/` | Twenty-three HTTP/database and proxy behavioral tests |
 | `public/samples/` | Fictional input CSV |
 | `docs/` | Architecture, presenter notes, validation and screenshots |
 

@@ -33,7 +33,7 @@ The prototype excludes heavy infrastructure, opaque fraud scoring and an LLM adm
 
 ## Validated key points
 
-- Nineteen HTTP/database tests pass locally, covering permission boundaries, atomicity, replay, stale edits, evidence guards, signature bindings, expiry/revocation, report scoping and persistent sessions.
+- Twenty-three HTTP/database and proxy tests pass locally, covering permission boundaries, atomicity, replay, stale edits, evidence guards, signature bindings, expiry/revocation, report scoping and persistent sessions.
 - The browser demonstration exercises correction, approval, disclosure and denial after withdrawal.
 - Counts reconcile to synthetic source rows; frozen JSON/CSV exports identify captured revisions.
 - Research provenance retains original member contributions, cited sources and AI supplements separately.

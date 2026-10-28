@@ -31,7 +31,7 @@ npm start
 
 Open **http://127.0.0.1:4871**. On Windows, `START_DEMO.cmd` installs missing dependencies, builds and starts the app. Stop with Ctrl+C. For development use `npm run dev` and open **http://127.0.0.1:5178**; stop another API process first.
 
-Optional settings are in [.env.example](.env.example). Keep the server on loopback: sign-in is deliberately simulated for the judging walkthrough. A fresh checkout creates its own fictional database and signing key under `prototype/data/`, both ignored by Git.
+Optional settings are in [.env.example](.env.example). Local sign-in is deliberately simulated for the judging walkthrough. An optional access-code protected hosted demo is described in [Deployment](docs/DEPLOYMENT.md). A fresh checkout creates its own fictional database and signing key under `prototype/data/`, both ignored by Git.
 
 ## What the judge can actually do
 
@@ -62,12 +62,12 @@ See [API contracts](docs/API.md), [architecture and trade-offs](prototype/docs/A
 ## Validation
 
 ```sh
-npm run check          # TypeScript, production build, 19 HTTP/database tests
+npm run check          # TypeScript, production build, 23 HTTP/database and proxy tests
 npm run format:check   # Application source formatting
 python tools/validate_research.py  # Optional: research links, ledgers and original-file hashes
 ```
 
-**Locally passed:** 19 tests against real HTTP endpoints and SQLite, plus the browser walkthrough described in [TESTING.md](docs/TESTING.md). The [CI workflow](.github/workflows/ci.yml) repeats build, test, formatting and research integrity checks on pushes and pull requests. CI results are separate from local results.
+**Locally passed:** 23 tests against real HTTP endpoints and SQLite, plus the browser walkthrough described in [TESTING.md](docs/TESTING.md). The [CI workflow](.github/workflows/ci.yml) repeats build, test, formatting and research integrity checks on pushes and pull requests. CI results are separate from local results.
 
 ## Built from six complementary workstreams
 
@@ -93,6 +93,10 @@ output/             Rendered research report and visual deliverables
 tools/              Research integrity and artifact generation scripts
 .github/            Continuous integration and contribution templates
 ```
+
+## Hosted demonstration
+
+The [deployment guide](docs/DEPLOYMENT.md) configures Vercel and Render, or Render alone, for fictional demo data. Render persistent disks require a paid service. Hosting has not been exercised against live provider accounts yet.
 
 ## What remains for an authorised pilot
 

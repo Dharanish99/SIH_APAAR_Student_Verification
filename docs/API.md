@@ -1,12 +1,12 @@
 # Internal prototype API
 
-Version 0.2.0. These are SetuTrace's local application routes, **not government API endpoints**. API responses use `Cache-Control: no-store` and `X-Request-ID`. JSON errors have `{error, code, requestId}`. No CORS access is granted to external websites.
+Version 0.3.0. These are SetuTrace's local application routes, **not government API endpoints**. API responses use `Cache-Control: no-store` and `X-Request-ID`. JSON errors have `{error, code, requestId}`. No CORS access is granted to external websites.
 
 ## Session and transport contract
 
 The local persona endpoint returns `{session}` and an HttpOnly, SameSite=Strict `setutrace_demo` cookie. Use the cookie for subsequent requests and `session.csrf` as `x-csrf-token` on mutations. The cookie is a selectable synthetic identity, not production authentication. Session tokens are stored only as SHA-256 hashes with a one-hour expiry; the database survives restart. New sessions are capped at 256 active entries.
 
-Default request limits per IP/minute: API 1000, session creation 100, verification 60. JSON is limited to 600 KB. CSV is limited to 512,000 UTF-8 bytes and 200 rows. Limits are in-process. Only loopback Host values and configured local Origins are accepted. `DEMO_MODE=false` refuses startup because real authentication is not configured.
+Default request limits per IP/minute: API 1000, session creation 100, verification 60. JSON is limited to 600 KB. CSV is limited to 512,000 UTF-8 bytes and 200 rows. Limits are in-process. Local mode accepts loopback hosts and local origins; hosted mode requires explicitly configured hosts and HTTPS origins. Hosted rate limits can aggregate traffic behind platform proxies. `DEMO_MODE=false` refuses startup because real authentication is not configured.
 
 ## Routes
 
@@ -14,7 +14,7 @@ Default request limits per IP/minute: API 1000, session creation 100, verificati
 |---|---|---|
 | GET `/health` | Public/local | Version, database type, schema version and synthetic mode; no student data |
 | GET `/capabilities` | Public/local | Upload/session limits and explicit simulated boundaries |
-| POST `/demo/session` | Public/local | `{role, tenant, recipient?}`; creates synthetic session; roles operator/approver/student/verifier/regulator; tenants aster/river; recipients Northstar Skills/Meridian Careers |
+| POST `/demo/session` | Public/local | `{role, tenant, recipient?, accessCode?}`; hosted first session requires the private judge code; creates synthetic session; roles operator/approver/student/verifier/regulator; tenants aster/river; recipients Northstar Skills/Meridian Careers |
 | GET `/session` | Session | Current session metadata and mutation token |
 | POST `/session/logout` | Session | Deletes the current token hash and clears cookie |
 | GET `/state` | Session | Role-filtered current workspace; students receive only their record; verifier receives permission metadata without assertion/claims; regulator receives aggregates |
@@ -22,9 +22,10 @@ Default request limits per IP/minute: API 1000, session creation 100, verificati
 | POST `/imports/preview` | Operator | `{csv}` → staged preview with fingerprint and line outcomes; no canonical source mutation |
 | POST `/imports/:id/commit` | Operator | Commits one preview atomically; checks all source versions; a matching committed batch returns its original receipt |
 | POST `/cases` | Student | `{programme, reason, expectedVersion}` for the student's programme; one open case per source record |
+| POST `/cases/:id/reopen` | Own student | Supersedes a stale open request with a linked request against the current source revision |
 | POST `/cases/:id/resolve` | Operator | `{decision, reason}`; the original case retains its expected source version; accept/decline a case, preserve reason and source history |
 | POST `/records/:id/provider-fixture` | Operator | `{response, expectedVersion}`; responses linked/unavailable/denied/not_linked; changes evidence and supersedes approval |
-| POST `/snapshots` | Approver | `{note}` → approval ID; freezes exact rows, findings, digest and fictional rule pack |
+| POST `/snapshots` | Approver | `{note, reviewDigest}` → approval ID; rejects a changed reviewed source set or cases, freezes exact rows, findings, digest and fictional rule pack |
 | GET `/snapshots/:id/export` | Operator/approver | Same-tenant frozen JSON, explicitly local/synthetic, including current snapshot status |
 | GET `/snapshots/:id/report.csv` | Operator/approver | Minimal frozen CSV: student ID, name, programme, status, source revision, snapshot status; no APAAR; formula prefixes neutralised |
 | POST `/grants` | Student | `{fields, purpose}`; allowed fields name/programme/status; current frozen source required; fifteen-minute grant for the session's recipient |

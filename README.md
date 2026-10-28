@@ -96,7 +96,7 @@ tools/              Research integrity and artifact generation scripts
 
 ## Hosted demonstration
 
-The [deployment guide](docs/DEPLOYMENT.md) configures Vercel and Render, or Render alone, for fictional demo data. Render persistent disks require a paid service. Hosting has not been exercised against live provider accounts yet.
+The [deployment guide](docs/DEPLOYMENT.md) configures Vercel and Render, or Render alone, for fictional demo data. Render persistent disks require a paid service. The live synthetic demo is [setutrace-sih.vercel.app](https://setutrace-sih.vercel.app). Its current Render free service uses ephemeral storage and may sleep; restarts reset fictional records, sessions and the signing key. Ask the owner privately for the judge code.
 
 ## What remains for an authorised pilot
 

@@ -24,7 +24,7 @@ TEAL = colors.HexColor('#087e83')
 INK = colors.HexColor('#233247')
 MUTED = colors.HexColor('#596b7c')
 PALE = colors.HexColor('#eef5f7')
-BASE = 'https://github.com/Dharanish99/SIH_APAAR_Student_Verification/blob/codex/research-synthesis-2026-10-26/'
+BASE = 'https://github.com/Dharanish99/SIH_APAAR_Student_Verification/blob/main/'
 
 def fonts():
     win = Path('C:/Windows/Fonts')
@@ -169,10 +169,10 @@ def main():
         Spacer(1,20),Paragraph('Evidence-led design / Complete proposed technology stack / Validation gates',ST['Copy']),
         Spacer(1,35),Paragraph('<b>Prepared 27 October 2026</b>',ST['Copy']),
         Paragraph('Built from the team\'s GitHub and Notion research, supplied uploads, specialist agent research and a reproduced synthetic experiment.',ST['Copy']),
-        Paragraph('Research and design only. No live government integration, operational deployment, institutional endorsement or field validation is claimed.',ST['Small']),
+        Paragraph('Dated research/design report; the repository now includes a separately tested synthetic prototype. No live government integration, operational deployment, institutional endorsement or field validation is claimed.',ST['Small']),
         PageBreak(),Paragraph('Report guide',ST['Section'])]
     toc=TableOfContents(); toc.levelStyles=[ParagraphStyle('TOC',fontName='Body',fontSize=10,leading=16,textColor=BLUE,spaceBefore=5,leftIndent=0,firstLineIndent=0)]
-    story.extend([toc,Spacer(1,15),Paragraph('Links in the report open primary publications or the versioned research branch. The source ledgers record retrieval dates, sections and limits.',ST['Small']),PageBreak()])
+    story.extend([toc,Spacer(1,15),Paragraph('Links in the report open primary publications or the main-branch research files. The source ledgers record retrieval dates, sections and limits.',ST['Small']),PageBreak()])
     story+=markdown_story(text,A4[0]-86)
     doc.multiBuild(story)
     print(str(OUT))

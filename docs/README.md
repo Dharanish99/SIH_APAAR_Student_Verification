@@ -1,9 +1,12 @@
-# Shared research documents
+# Project documentation
 
 [Project](../README.md)
 
 | Document | Purpose |
 |---|---|
+| [API](API.md) | Implemented internal routes, role and failure contracts |
+| [Testing](TESTING.md) | Executed application checks and boundaries |
+| [Submission pack](../submission/README.md) | Judge-facing summary and demo |
 | [Solution report](solution-report.md) | Recommended idea, alternatives, journeys, stack and evaluation |
 | [Solution brief](solution-brief.md) | Short explanation for team discussion |
 | [Mind map](mind-map.md) | Complete visual overview and editable sources |

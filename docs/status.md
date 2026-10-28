@@ -1,3 +1,9 @@
+# Project status — 28 October 2026
+
+The research foundation is now accompanied by a runnable synthetic submission prototype. See the [application](../prototype/README.md), [testing record](TESTING.md) and [team provenance](../TEAM.md). Nineteen HTTP/database checks pass locally. Real institutional authentication, authorised provider access, approved policy and user-pilot evidence remain open.
+
+The research-phase status below is retained as a dated record; prototype implementation and negative API tests address part of its technical next steps. No human sign-off or field validation is implied.
+
 # Research status - 27 October 2026
 
 Desk research and synthesis are prepared for human review. Agent checking is not a human sign-off or field validation.

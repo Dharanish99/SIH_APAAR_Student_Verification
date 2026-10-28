@@ -1,6 +1,6 @@
 # Requirement coverage and acceptance gates
 
-Baseline: ten requirements paraphrased from the supplied SIH26263 statement. [Official wording](official-problem-verification.md) remains unconfirmed. All rows describe **proposed behavior**; none is an implemented capability. [Report](solution-report.md) explains the complete concept.
+Baseline: ten requirements paraphrased from the supplied SIH26263 statement. [Official wording](official-problem-verification.md) remains unconfirmed. The detailed table records the **27 October research proposal**. The current implemented subset is mapped below; remaining proposal rows must not be read as completed features. [Report](solution-report.md) explains the complete concept.
 
 | ID / requirement | Proposed response | Evidence and acceptance condition | Delivery boundary |
 |---|---|---|---|
@@ -16,3 +16,19 @@ Baseline: ten requirements paraphrased from the supplied SIH26263 statement. [Of
 | R10 APAAR plus student-ID certificate display | Awarding-body-controlled display template with synthetic values and private verification entry point | [Security](../research/sudhir/privacy-design.md), [integration](../research/sudhan/integration-review.md). Both identifiers supported in approved template; QR contains opaque reference, no public identifier lookup | Design/sample only; actual certificate issuance requires awarding authority and confirmed requirement |
 
 **Review:** AI coverage review only, 27 October 2026. Human approval remains pending. Passing an isolated check is never a universal claim that a student or admission is valid.
+
+## Implemented subset — 28 October 2026
+
+| Requirement | Actual prototype coverage | Remaining scope |
+|---|---|---|
+| R01 | Tenant-scoped CSV, replay, expected-version checks and snapshots | Real APAAR account linking |
+| R02 | Two fictional programmes and regular-entry source rows | Authoritative year/category/seat definitions, NRI/OCI/FN/supernumerary logic |
+| R03 | Source discrepancy, capacity arithmetic, missing/format/provider findings; duplicate import IDs | Cross-institution duplication and full legal exception model |
+| R04 | Institution dashboard, student desk and aggregate regulator persona | Real regulator mandate and institutional authentication |
+| R05–R06 | Minimal synthetic signed assertions, intended recipient, expiry, revocation and source freshness | Real recipient/issuer onboarding, official credentials and interoperable VC |
+| R07 | CSV and documented internal API; provider fixtures | Authorised government interfaces and acknowledgements |
+| R08 | API scopes, mutation tokens, persistent demo sessions, database evidence guards and audit checks | Production identity, key custody, retention governance, security/privacy assessment |
+| R09 | Live scoped summary, frozen JSON and minimal spreadsheet-safe CSV | Official regulator/accreditation formats |
+| R10 | Research design only | Authorised certificate template and issuance/printing |
+
+See [API](API.md), [tests](TESTING.md) and [architecture](../prototype/docs/ARCHITECTURE.md). This is a focused submission prototype, not full implementation of every supplied requirement.

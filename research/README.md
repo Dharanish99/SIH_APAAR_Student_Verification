@@ -13,4 +13,4 @@
 
 Each member maintains findings, claim-level sources and progress in their own folder.
 Read the assignment before using an AI agent. Subfolders such as `experiments/` or `notes/` should be added only when they contain actual work.
-The source lists begin empty intentionally. Assignments and suggested sources are not completed research.
+The current workspaces include original member evidence and labelled AI supplements. The [assignment audit](../docs/research-audit.md) distinguishes completion, provenance and remaining external work; a suggested source alone is not validated research.

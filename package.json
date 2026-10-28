@@ -1,0 +1,25 @@
+{
+  "name": "setutrace-sih",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "description": "SIH26263 prototype: explainable student reporting, correctable evidence and limited verification",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "workspaces": [
+    "prototype"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace prototype",
+    "build": "npm run build --workspace prototype",
+    "start": "npm start --workspace prototype",
+    "test": "npm test --workspace prototype",
+    "check": "npm run build && npm test",
+    "format": "prettier --write \"prototype/{src,server,shared,tests}/**/*.{ts,tsx,css}\"",
+    "format:check": "prettier --check \"prototype/{src,server,shared,tests}/**/*.{ts,tsx,css}\""
+  },
+  "devDependencies": {
+    "prettier": "3.9.10"
+  }
+}

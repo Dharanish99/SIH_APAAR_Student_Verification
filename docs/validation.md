@@ -37,6 +37,6 @@ The proposal is research-grounded, **not real-world validated**. Proposed 90% ta
 
 ## Publication
 
-Research is published on `codex/research-synthesis-2026-10-26`; the repository default branch is not merged by this research task. Remote publication is verified independently after the commit and push. The PR records the committed package and review state.
+The research was initially published through draft PR #2. On 28 October the owner explicitly authorised consolidating the preserved research history and executable prototype on main. See the [current application testing record](TESTING.md); the earlier research checks below do not certify application behavior.
 
 Final remote update: newer Pranav/Sudhir contributions were imported and reconciled; all original rules/cases and both revised ledgers were checked. The research branch includes origin/main history through0d12323. Source snapshots remain byte-identical under archive-specific Git attributes.

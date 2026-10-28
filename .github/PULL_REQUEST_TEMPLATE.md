@@ -1,28 +1,11 @@
-## Research owner and scope
-Member:
-Question / workstream:
-Requirement IDs:
+## Problem and resulting behavior
 
-## What changed and why
+Explain the concrete trigger and how the change affects the student, institution or verifier.
 
-## Evidence
-Source/finding IDs:
-Applicability and dates:
-Assumptions or unresolved claims:
+## Validation
 
-## Verification
-Checks/experiments actually performed:
-Results and limitations:
+Record commands and actual results, including relevant browser checks. Distinguish synthetic tests from live-provider or field evidence.
 
-## Handoff
-Requested human reviewer:
-Dependency or decision needed:
+## Evidence and boundaries
 
-## Checklist
-- [ ] Findings and progress reflect work actually performed.
-- [ ] Sources and relative links were checked.
-- [ ] AI-assisted content was verified and meaningful AI assistance is disclosed below.
-- [ ] Simulations/synthetic data are labelled.
-- [ ] No personal records, secrets or confidential data are included.
-
-AI assistance and human verification:
+Link the research/workstream when applicable. Explain changed assumptions, simulation boundaries or remaining pilot dependencies. Confirm no real student data, local databases or keys are included.

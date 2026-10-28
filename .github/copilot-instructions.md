@@ -1,4 +1,3 @@
 # Repository instructions
-Read and follow [AGENTS.md](../AGENTS.md) and the member mapping in [team.json](../team.json).
-Read the assigned research folder before editing. Preserve human ownership, distinguish evidence from proposals, and label simulations.
-This is a research workspace; do not invent application commands, integration access, benchmarks or human approval.
+
+Follow [AGENTS.md](../AGENTS.md), the root README and [team.json](../team.json). This is now a runnable synthetic React/Express/SQLite prototype with preserved research. Use root npm workspace commands. Preserve member ownership and original source hashes; never fabricate live access, approvals, metrics or code attribution. Keep runtime data and keys out of Git. The current publication target is main, with no Codex-named branch.

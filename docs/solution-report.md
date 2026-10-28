@@ -4,7 +4,7 @@
 
 **Idea report · SIH26263 supplied brief · Completed 27 October 2026**
 
-Prepared by a separate AI design-thinking innovator after the six research workstreams were assembled. Human workstream ownership remains as recorded in [team.json](../team.json); Kanishkar B is the human team lead. Research began 26 October. This is a proposal for human review, with no application implementation, provider credentials, live government integration, interviews or field pilot. SetuTrace is a working name, with no claim of official affiliation or name clearance.
+Prepared by a separate AI design-thinking innovator after the six research workstreams were assembled. Human workstream ownership remains as recorded in [team.json](../team.json); Kanishkar B is the human team lead. Research began 26 October. This is the 27 October research proposal for human review. At that stage no application had been implemented. The [28 October submission prototype](../prototype/README.md) now implements a focused subset; see [actual test evidence](TESTING.md). No provider credentials, live government integration, interviews or field pilot are claimed. SetuTrace is a working name, with no claim of official affiliation or name clearance.
 
 **Recommendation:** build a narrow reporting and correction layer alongside institutional systems. Its useful output is an explainable submission snapshot: which enrolment records were counted, which approval and rule versions were used, what remains unresolved, and who can correct it. APAAR helps connect authorised evidence; it does not become a universal admission verdict.
 

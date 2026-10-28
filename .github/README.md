@@ -1,10 +1,3 @@
-# GitHub collaboration templates
+# Repository collaboration
 
-- [Research task](ISSUE_TEMPLATE/research-task.md): a focused question with evidence and completion criteria.
-- [Research blocker](ISSUE_TEMPLATE/research-blocker.md): a concrete dependency or conflicting evidence.
-- [Pull request template](PULL_REQUEST_TEMPLATE.md): changes, sources, checks and requested review.
-- [Copilot entry point](copilot-instructions.md): forwards to the common agent instructions.
-
-These files do not automatically create issues, assign people or configure branch protection.
-GitHub recognises issue/PR templates when they are on the default branch.
-GitHub handles for the six members have not been verified, so no CODEOWNERS file is guessed.
+CI repeats application build/tests/formatting and research integrity checks. Research issue templates retain the original assignment workflow. The current submission consolidation targets main at the owner's request. Human ownership and source provenance are documented in [TEAM.md](../TEAM.md).

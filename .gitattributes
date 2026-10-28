@@ -8,3 +8,12 @@ research/sudhir/original-2026-10-26/** -text
 research/pranav/original-2026-10-26/** -text
 research/dharanish/experiments/notion-original/** -text
 research/provenance/notion/** -text
+
+# Stable application formatting on Windows and Linux.
+*.ts text eol=lf
+*.tsx text eol=lf
+*.css text eol=lf
+*.mjs text eol=lf
+*.html text eol=lf
+*.yml text eol=lf
+*.cmd text eol=crlf

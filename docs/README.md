@@ -8,6 +8,7 @@
 | [Testing](TESTING.md) | Executed application checks and boundaries |
 | [Submission pack](https://github.com/Dharanish99/SIH_Project_Prototype) | Judge-facing summary and demo |
 | [Solution report](solution-report.md) | Recommended idea, alternatives, journeys, stack and evaluation |
+| [50,000-character project idea](project-idea-description.md) | Expanded, research-grounded idea description, prototype boundary and validation gates |
 | [Solution brief](solution-brief.md) | Short explanation for team discussion |
 | [Mind map](mind-map.md) | Complete visual overview and editable sources |
 | [Assignment audit](research-audit.md) | Six-person provenance and completion mapping |

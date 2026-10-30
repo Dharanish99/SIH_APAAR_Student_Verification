@@ -16,7 +16,7 @@ Our solution hypothesis connects **import → explain → correct → approve �
 - `output/`: research report and research-validator output.
 - `TEAM.md` and `team.json`: ownership and attribution.
 
-Start with the [research index](research/README.md), [solution report](docs/solution-report.md), [research audit](docs/research-audit.md), [source guide](docs/source-guide.md) and [mind map](docs/mind-map.md).
+Start with the [50,000-character project idea](docs/project-idea-description.md), [research index](research/README.md), [solution report](docs/solution-report.md), [research audit](docs/research-audit.md), [source guide](docs/source-guide.md) and [mind map](docs/mind-map.md).
 
 ## Validation and prototype
 

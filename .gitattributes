@@ -17,3 +17,4 @@ research/provenance/notion/** -text
 *.html text eol=lf
 *.yml text eol=lf
 *.cmd text eol=crlf
+docs/project-idea-description.md text eol=lf

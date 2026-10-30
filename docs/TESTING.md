@@ -21,7 +21,7 @@ The Python check needs Python 3.10+ and only the standard library; it is optiona
 
 ## Local results
 
-TypeScript checking, Vite production build and **19 HTTP/database tests passed (0 failures)** on Windows with Node 24.19.0 / npm 11.6.0. The tests are in [api.test.ts](../prototype/tests/api.test.ts) and [hardening.test.ts](../prototype/tests/hardening.test.ts).
+TypeScript checking, Vite production build and **19 HTTP/database tests passed (0 failures)** on Windows with Node 24.19.0 / npm 11.6.0. The tests are in [api.test.ts](https://github.com/Dharanish99/SIH_Project_Prototype/blob/main/tests/api.test.ts) and [hardening.test.ts](https://github.com/Dharanish99/SIH_Project_Prototype/blob/main/tests/hardening.test.ts).
 
 | Area | Actual exercised behavior |
 |---|---|
@@ -54,7 +54,7 @@ The built app was exercised at a separate local port (4872) so the original prot
 
 The new Reports & audit screen was checked at 1365-pixel desktop, 390-pixel mobile and 320-pixel narrow mobile viewports. The document remained within the viewport at both mobile widths; no warning/error entries appeared in the inspected browser log. This is not a formal accessibility audit.
 
-Screenshots are actual application captures in [the evidence folder](../prototype/docs/screenshots/). Earlier initial-prototype UI acceptance is preserved in [the initial validation record](../prototype/docs/VALIDATION.md); it is a dated baseline, not evidence of every later feature.
+Screenshots are actual application captures in [the evidence folder](https://github.com/Dharanish99/SIH_Project_Prototype/tree/main/docs/screenshots). Earlier initial-prototype UI acceptance is preserved in [the initial validation record](https://github.com/Dharanish99/SIH_Project_Prototype/blob/main/docs/VALIDATION.md); it is a dated baseline, not evidence of every later feature.
 
 ## Remote automation
 
@@ -63,3 +63,4 @@ Screenshots are actual application captures in [the evidence folder](../prototyp
 ## Limits of this evidence
 
 No real OIDC/provider contract, approved legal rule pack, PostgreSQL concurrency, restore exercise, penetration test, formal accessibility audit, institutional/user pilot, measured staff-time saving or national-load test has been performed. All provider responses, seat capacities, personas and signing identity are synthetic. Research source integrity validates stored bytes and packaging, not the truth of every source claim.
+

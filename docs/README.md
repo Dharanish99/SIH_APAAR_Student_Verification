@@ -6,7 +6,7 @@
 |---|---|
 | [API](API.md) | Implemented internal routes, role and failure contracts |
 | [Testing](TESTING.md) | Executed application checks and boundaries |
-| [Submission pack](../submission/README.md) | Judge-facing summary and demo |
+| [Submission pack](https://github.com/Dharanish99/SIH_Project_Prototype) | Judge-facing summary and demo |
 | [Solution report](solution-report.md) | Recommended idea, alternatives, journeys, stack and evaluation |
 | [Solution brief](solution-brief.md) | Short explanation for team discussion |
 | [Mind map](mind-map.md) | Complete visual overview and editable sources |
@@ -21,3 +21,4 @@
 | [Research plan](research-plan.md) | Original plan and readiness gates |
 | [Research standards](research-standards.md) | Source, AI and review expectations |
 | [Source guide](source-guide.md) | Discovery starting points |
+

@@ -31,4 +31,5 @@ Baseline: ten requirements paraphrased from the supplied SIH26263 statement. [Of
 | R09 | Live scoped summary, frozen JSON and minimal spreadsheet-safe CSV | Official regulator/accreditation formats |
 | R10 | Research design only | Authorised certificate template and issuance/printing |
 
-See [API](API.md), [tests](TESTING.md) and [architecture](../prototype/docs/ARCHITECTURE.md). This is a focused submission prototype, not full implementation of every supplied requirement.
+See [API](API.md), [tests](TESTING.md) and [architecture](https://github.com/Dharanish99/SIH_Project_Prototype/blob/main/docs/ARCHITECTURE.md). This is a focused submission prototype, not full implementation of every supplied requirement.
+

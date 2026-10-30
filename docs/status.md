@@ -1,6 +1,6 @@
 # Project status — 28 October 2026
 
-The research foundation is now accompanied by a runnable synthetic submission prototype. See the [application](../prototype/README.md), [testing record](TESTING.md) and [team provenance](../TEAM.md). Nineteen HTTP/database checks pass locally. Real institutional authentication, authorised provider access, approved policy and user-pilot evidence remain open.
+The research foundation is now accompanied by a runnable synthetic submission prototype. See the [application](https://github.com/Dharanish99/SIH_Project_Prototype), [testing record](TESTING.md) and [team provenance](../TEAM.md). Nineteen HTTP/database checks pass locally. Real institutional authentication, authorised provider access, approved policy and user-pilot evidence remain open.
 
 The research-phase status below is retained as a dated record; prototype implementation and negative API tests address part of its technical next steps. No human sign-off or field validation is implied.
 
@@ -18,3 +18,4 @@ Desk research and synthesis are prepared for human review. Agent checking is not
 | [Kanishkar](../research/kanishkar/findings.md) | Research reconciliation, alternatives, MVP and evaluation proposal | Human decision, teach-back and permitted pilot |
 
 [Assignment audit](research-audit.md) records the actual agents and source provenance. [Validation record](validation.md) separates checks performed from future tests. None of the six workstreams has a recorded human approval in this research round.
+

@@ -10,4 +10,5 @@ The map has **12 main branches and 82 detailed points**, covering people, produc
 
 ![SetuTrace complete mind map](assets/mind-map.png)
 
-The map describes a proposed solution. The reproduced experiment is a sequential fictional model; no application was built during that research phase. The [current prototype](../prototype/README.md) implements a focused subset; no live provider call or field pilot is claimed. Proposed pilot targets are not measured results. Rebuild the local artifacts using `python tools/render_mind_map.py` from the repository root (Pillow required).
+The map describes a proposed solution. The reproduced experiment is a sequential fictional model; no application was built during that research phase. The [prototype repository](https://github.com/Dharanish99/SIH_Project_Prototype) implements a focused subset; no live provider call or field pilot is claimed. Proposed pilot targets are not measured results. Rebuild the local artifacts using `python tools/render_mind_map.py` from the repository root (Pillow required).
+

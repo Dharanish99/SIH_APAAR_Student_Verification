@@ -4,7 +4,7 @@
 
 **Idea report · SIH26263 supplied brief · Completed 27 October 2026**
 
-Prepared by a separate AI design-thinking innovator after the six research workstreams were assembled. Human workstream ownership remains as recorded in [team.json](../team.json); Kanishkar B is the human team lead. Research began 26 October. This is the 27 October research proposal for human review. At that stage no application had been implemented. The [28 October submission prototype](../prototype/README.md) now implements a focused subset; see [actual test evidence](TESTING.md). No provider credentials, live government integration, interviews or field pilot are claimed. SetuTrace is a working name, with no claim of official affiliation or name clearance.
+Prepared by a separate AI design-thinking innovator after the six research workstreams were assembled. Human workstream ownership remains as recorded in [team.json](../team.json); Kanishkar B is the human team lead. Research began 26 October. This is the 27 October research proposal for human review. At that stage no application had been implemented. The [28 October submission prototype](https://github.com/Dharanish99/SIH_Project_Prototype) now implements a focused subset; see [actual test evidence](TESTING.md). No provider credentials, live government integration, interviews or field pilot are claimed. SetuTrace is a working name, with no claim of official affiliation or name clearance.
 
 **Recommendation:** build a narrow reporting and correction layer alongside institutional systems. Its useful output is an explainable submission snapshot: which enrolment records were counted, which approval and rule versions were used, what remains unresolved, and who can correct it. APAAR helps connect authorised evidence; it does not become a universal admission verdict.
 
@@ -185,3 +185,5 @@ Measure total operator, approver and student effort; correction completion; expl
 SetuTrace is defensible when it helps people correct and explain records without overstating what identity evidence proves. The current deliverable is the research-backed design and its testable assumptions. [Actual AI critique and resolutions](design-critique.md) remain separate from the human decisions still required.
 
 **Lead publication update:** The final remote refresh incorporated newer Pranav and Sudhir contributions, preserved alongside their specialist reconciliations in the [assignment audit](research-audit.md).
+
+
